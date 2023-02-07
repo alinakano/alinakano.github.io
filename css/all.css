@@ -1,0 +1,104 @@
+
+/* Everything */
+* {
+	font-family: andale mono;
+}
+
+
+
+
+/* All things in the Header container */
+header {
+}
+
+/* The main home link at the top "Alina Kano" */
+#homeLink {
+	text-decoration: none;
+	font-family: arial rounded mt bold;
+	font-size: 3em;   /* 1em is 16px */
+	color: #000000;
+}
+#homeLink:visited {
+	color: #000000;
+}
+
+
+/* The body of the page including the main links on the left and the gallery, etc (everything under the header) */
+#pageBody {
+
+}
+
+
+
+/* The container of your main links menu on the left side */
+#mainLinks {
+	position: fixed;
+	top: 83px;
+	width: 130px;
+	height: 500px;
+}
+
+
+/* The main links for selected work, poster art, band art */
+#mainLinks a {
+	display: block;
+	line-height: 3;
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+}
+#mainLinks a:visited {
+	color: black;
+}
+#mainLinks a:hover {
+  color: gray;
+}
+
+
+
+
+/* The container for all the stuff that isn't the header or links menu */
+.mainContent {
+	background-color: white;
+	padding-left: 150px;
+}
+
+
+/* The heading text for each page */
+h1 {
+	padding-top: 10px;
+	padding-left: 40px;
+	font-family: arial rounded mt bold;
+
+}
+h2 {
+	font-size: 16px;
+	padding-left: 40px;
+	text-transform: uppercase;
+}
+
+/* The container of images of your works */
+#imageGallery {
+
+}
+
+#imageGallery figure {
+	margin-top: 0px;
+	display: block;
+
+}
+
+#imageGallery figure p {
+	font-size: 12px;
+	font-style: italic;
+	text-align: left;
+	margin: 0px;
+}
+
+
+/* The images of works */
+#imageGallery img {
+	width: 400px;
+	height: auto;
+}

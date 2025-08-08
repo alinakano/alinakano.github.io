@@ -21,37 +21,49 @@ allie does it on her own in 2025
 
 
 
+
+
 <body>
   <div class="center-container">
-    <div class="fade-in">
-      <h1>alina kano</h1>
-        <a href="https://www.alinakano.com/selected-work/index.html" class="link">enter</a>
-        <a href="https://gravybuggo.bigcartel.com" class="link">shop</a>
+    <div class="content-block">
+      <h1 class="fade-in">alina kano</h1>
+      <a href="https://www.alinakano.com/selected-work/index.html" class="link fade-in delay1">enter</a>
+      <a href="https://gravybuggo.bigcartel.com" class="link fade-in delay2">shop</a>
+    </div>
   </div>
 
   <style>
-    /* Fullscreen container centers everything */
+    /* Centers the block on the page */
     .center-container {
       display: flex;
-      justify-content: center; /* horizontal */
-      align-items: center;     /* vertical */
-      height: 100vh;           /* full screen height */
-      flex-direction: column;  /* stack vertically */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Keeps title + links aligned on same axis */
+    .content-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* ensures all children share same center */
+      text-align: center;
+      gap: 0.5rem; /* space between items */
     }
 
     /* Fade-in animation */
     .fade-in {
       opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
-      text-align: center;
+      animation: fadeIn 1.5s ease-in forwards;
     }
+    .delay1 { animation-delay: 0.5s; }
+    .delay2 { animation-delay: 1s; }
 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    /* Link styling */
+    /* Link style */
     .link {
       color: #007BFF;
       text-decoration: none;

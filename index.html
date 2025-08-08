@@ -24,22 +24,34 @@ allie does it on her own in 2025
 
 </html>
 
-<h1 class="fade-in">alina kano</h1>
+<body>
+  <div class="center-container">
+    <h1 class="fade-in">alina kano</h1>
+  </div>
 
-<style>
-.fade-in {
-  opacity: 0;
-  text-align: center; /* centers the text */
-  animation: fadeIn 2s ease-in forwards;
-}
+  <style>
+    /* Fullscreen container that centers content */
+    .center-container {
+      display: flex;
+      justify-content: center; /* horizontal center */
+      align-items: center;     /* vertical center */
+      height: 100vh;           /* full viewport height */
+    }
 
-/* Keyframes for fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-</style>
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      font-size: 3rem;         /* adjust size if needed */
+      text-align: center;
+    }
 
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</body>
 <!DOCTYPE html>
 <html>
   <head>

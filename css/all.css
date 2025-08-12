@@ -15,7 +15,8 @@ header {
 #homeLink {
 	text-decoration: none;
 	text-align: center;
-	font-family: andale mono;
+	font-family: courier;
+	letter-spacing: -1px;
 	font-size: 3em;   /* 1em is 16px */
 	color: #000000;
 }
@@ -62,7 +63,7 @@ header {
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: white;
+	background-color: #A8E6F7;
 	padding-left: 150px;
 }
 

@@ -4,7 +4,11 @@
 	font-family: courier;
 }
 
-
+html, body {
+  background-color: #A8E6F7;
+  margin: 0;
+  padding: 0;
+}
 
 
 /* All things in the Header container */

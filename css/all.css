@@ -61,7 +61,7 @@ header {
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: A8E6F7;
+	background-color: white;
 	padding-left: 150px;
 }
 
@@ -70,7 +70,9 @@ header {
 h1 {
 	padding-top: 10px;
 	padding-left: 40px;
+	padding-bottom: 0px;
 	font-family: andale mono;
+	font-size: 12px;
 
 }
 h2 {

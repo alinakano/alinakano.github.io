@@ -43,7 +43,7 @@ header {
 /* The main links for selected work, poster art, band art */
 #mainLinks a {
 	display: block;
-	line-height: 3;
+	line-height: 2;
 	text-decoration: none;
 	color: black;
 	text-transform: uppercase;

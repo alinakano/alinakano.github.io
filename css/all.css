@@ -1,7 +1,7 @@
 
 /* Everything */
 * {
-	font-family: bebas neue;
+	font-family: andale mono;
 }
 
 
@@ -15,7 +15,7 @@ header {
 #homeLink {
 	text-decoration: none;
 	text-align: center;
-	font-family: arial rounded mt bold;
+	font-family: playbill;
 	font-size: 3em;   /* 1em is 16px */
 	color: #000000;
 }
@@ -61,7 +61,7 @@ header {
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: white;
+	background-color: A8E6F7;
 	padding-left: 150px;
 }
 

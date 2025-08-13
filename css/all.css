@@ -134,14 +134,14 @@ h2 {
 }
 
 
-/* Only applies to the page with .gallery-page - EDIT THIS, CURRENTLY CONNECTED TO NOTHING */
-.gallery-page .gallery {
+/* Only applies to the page with .gallery-page - EDIT THIS */
+.poster-art .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
   gap: 10px; /* space between images */
 }
 
-.gallery-page .gallery img {
+.poster-art .gallery img {
   width: 100%;
   height: auto;
   display: block;

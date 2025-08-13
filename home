@@ -6,6 +6,13 @@ allie does it on her own in 2025
 -->
 
 <html>
+
+ <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Your Site</title>
+  <!-- If your site is a *project page* (username.github.io/repo), prefer relative paths like ./style.css -->
+  <link rel="stylesheet" href="./style.css">
+</head>
 	
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
@@ -28,7 +35,7 @@ allie does it on her own in 2025
 
 			<!-- Main Links -->
 			<div id="mainLinks">
-				<a href="../home/index.html">home</a>
+				<a href="../homepage/index.html">home</a>
 				<a href="../selected-work/index.html">drawings</a>
 				<a href="../band-art/index.html">band art</a>
 				<a href="../poster-art/index.html">posters</a>

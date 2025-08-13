@@ -35,7 +35,7 @@ header {
 #homeLink {
 	text-decoration: none;
 	text-align: center;
-	padding-left: 30px;
+	padding-left: 45px;
 	font-family: courier;
 	letter-spacing: -1px;
 	font-size: 3em;   /* 1em is 16px */
@@ -56,7 +56,7 @@ header {
 /* The container of your main links menu on the left side */
 #mainLinks {
 	position: fixed;
-	padding-left: 30px;
+	padding-left: 50px;
 	top: 83px;
 	width: 130px;
 	height: 500px;
@@ -87,14 +87,14 @@ header {
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
 	background-color: #A8E6F7;
-	padding-left: 150px;
+	padding-left: 170px;
 }
 
 
 /* The heading text for each page */
 h1 {
 	padding-top: 10px;
-	padding-left: 50px;
+	padding-left: 40px;
 	padding-bottom: 0px;
 	font-family: courier;
 	font-size: 16px;
@@ -102,7 +102,7 @@ h1 {
 }
 h2 {
 	font-size: 16px;
-	padding-left: 50px;
+	padding-left: 40px;
 	text-transform: uppercase;
 }
 
@@ -113,7 +113,6 @@ h2 {
 
 #imageGallery figure {
 	margin-top: 0px;
-	padding-left: 50px;
 	display: block;
 
 }

@@ -94,7 +94,7 @@ header {
 /* The heading text for each page */
 h1 {
 	padding-top: 10px;
-	padding-left: 40px;
+	padding-left: 50px;
 	padding-bottom: 0px;
 	font-family: courier;
 	font-size: 16px;
@@ -102,7 +102,7 @@ h1 {
 }
 h2 {
 	font-size: 16px;
-	padding-left: 40px;
+	padding-left: 50px;
 	text-transform: uppercase;
 }
 
@@ -113,6 +113,7 @@ h2 {
 
 #imageGallery figure {
 	margin-top: 0px;
+	padding-left: 50px;
 	display: block;
 
 }

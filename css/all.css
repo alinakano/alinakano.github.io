@@ -66,12 +66,12 @@ header {
 /* The main links for selected work, poster art, band art */
 #mainLinks a {
 	display: block;
-	line-height: 3;
+	line-height: 1.5;
 	text-decoration: none;
 	color: black;
 	text-transform: uppercase;
 	letter-spacing: 0px;
-	font-size: 16px;
+	font-size: 15px;
 	font-style: bold;
 }
 #mainLinks a:visited {

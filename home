@@ -1,1 +1,53 @@
 
+<!doctype html>
+
+<!--
+allie does it on her own in 2025
+-->
+
+<html>
+	
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
+		<link rel = "stylesheet" type = "text/css" href = "../css/home.css"/>
+		<title>alina kano</title>
+	</head>
+
+	<body>
+
+
+		<!--  The header of the home link -->
+		<header>
+			<a id="homeLink" href="../index.html">alina kano</a>
+		</header>
+
+
+		<!-- Page Content -->
+		<div id="pageBody">
+
+
+			<!-- Main Links -->
+			<div id="mainLinks">
+				<a href="../home/index.html">home</a>
+				<a href="../selected-work/index.html">drawings</a>
+				<a href="../band-art/index.html">band art</a>
+				<a href="../poster-art/index.html">posters</a>
+				<a href="../contact/index.html">contact</a>
+			</div>
+
+
+			<!--  Work Content -->
+			<section class = "mainContent">
+
+				<h1>whoa dang it's my ~homepage~</h1>
+				<h2>hi</h2>
+
+
+			</section>
+
+
+		</div>
+
+	</body>
+
+</html>

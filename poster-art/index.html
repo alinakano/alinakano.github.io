@@ -54,7 +54,7 @@ Dillon Bastan and Alina Kano 2023.
 			
 	<body class="gallery-page">
   		<div class="gallery">
-			
+	
 					<figure>
 						<a href="../images/poster-art/full-size/1.jpg"> <img src="../images/poster-art/1.jpg"></a>
 					</figure>
@@ -106,10 +106,24 @@ Dillon Bastan and Alina Kano 2023.
 
 				</div>
 
-			<!-- </section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".gallery-page .gallery img");
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("show");
+        }, index * 200); // Stagger delay
+        observer.unobserve(entry.target); // Animate once
+      }
+    });
+  }, { threshold: 0.2 });
 
-		</div> -->
+  images.forEach(img => observer.observe(img));
+});
+</script>
 
 	</body>
 

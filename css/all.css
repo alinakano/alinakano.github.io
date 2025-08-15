@@ -146,18 +146,7 @@ h2 {
   height: auto;
 	padding-left: 170px;
   display: block;
-	
-/* Start invisible and shifted down */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease-out forwards;
-}
 
-/* Animate in when "show" class is added by JS */
-.gallery-page .gallery img.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Responsive: 1 column on small screens */
 @media (max-width: 600px) {

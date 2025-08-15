@@ -134,7 +134,7 @@ h2 {
 }
 
 
-/* Only applies to the page with .gallery-page - EDIT THIS */
+/* Only applies to the page with .gallery-page - for posters page only */
 .gallery-page .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
@@ -144,5 +144,6 @@ h2 {
 .gallery-page .gallery img {
   width: 100%;
   height: auto;
+	padding-left: 83px;
   display: block;
 }

@@ -139,6 +139,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns on desktop */
   gap: 5px; /* space between images */
+	margin: 0;
 }
 
 .gallery-page .gallery img {

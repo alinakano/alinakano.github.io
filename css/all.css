@@ -134,21 +134,23 @@ h2 {
 }
 
 
-/* Only applies to the page with .gallery-page - for posters page only */
+/* Only applies to the posters page (body has .gallery-page) */
 .gallery-page .gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns on desktop */
-  gap: 5px; /* space between images */
-	margin: 0;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
+  gap: 5px; /* controls the space between columns */
+  margin: 0;
+  padding-left: 170px; /* shift whole gallery over for navbar */
 }
 
 .gallery-page .gallery img {
-  width: 80%;
+  width: 100%;   /* make images fill their grid cell */
   height: auto;
-	padding-left: 170px;
   display: block;
+}
 
-	.gallery-page .content-area {
+/* If you have a .content-area wrapper on this page */
+.gallery-page .content-area {
   padding-left: 170px;
 }
 

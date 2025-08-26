@@ -10,6 +10,114 @@ allie does it on her own in 2025.
 		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "../css/band-art.css"/>
 		<title>ALINA KANO</title>
+		  <style>
+    body {
+      padding: 40px;
+      margin: 0;
+    }
+
+    .slider-section {
+      margin-left: 200px; /* space for sidebar */
+      max-width: 600px;
+	  margin-bottom: 50px; /* space between sliders */
+    }
+
+    .slider-section h1 {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      padding-left: 10px;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 600px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .slider .prev { left: 10px; }
+    .slider .next { right: 10px; }
+
+  /* Captions */
+  .caption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    min-height: 20px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .caption.fade-out { opacity: 0; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      border: none;
+      font-size: 36px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      color: black;
+    }
+
+    .lightbox .prev { left: 30px; }
+    .lightbox .next { right: 30px; }
+  </style>
 	</head>
 
 	<body>
@@ -131,109 +239,18 @@ allie does it on her own in 2025.
 				
 				</div>
 
-				    .slider-section {
-      margin-left: 200px; /* space for sidebar */
-      max-width: 600px;
-	  margin-bottom: 50px; /* space between sliders */
-    }
+			</section>
 
-    .slider-section h1 {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-      padding-left: 10px;
-    }
 
-    .slider {
-      position: relative;
-      max-width: 600px;
-      overflow: hidden;
-      background: white;
-    }
+		</div>
 
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
 
-    .slides img {
-      width: 100%;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
+	</body>
 
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      font-size: 24px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
+</html>
 
-    .slider .prev { left: 10px; }
-    .slider .next { right: 10px; }
 
-  /* Captions */
-  .caption {
-    text-align: center;
-    margin-top: 8px;
-    font-size: 14px;
-    color: #333;
-    min-height: 20px;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-  }
-  .caption.fade-out { opacity: 0; }
 
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-direction: column;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-    }
-
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    }
-
-    .lightbox button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.7);
-      border: none;
-      font-size: 36px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      color: black;
-    }
-
-    .lightbox .prev { left: 30px; }
-    .lightbox .next { right: 30px; }
-  </style>
-</head>
 <body>
 
   <!-- First Slider -->
@@ -360,14 +377,5 @@ allie does it on her own in 2025.
     updateCaption("slider2");
   </script>
 
-			</section>
-
-
-		</div>
-
-
-	</body>
-
+</body>
 </html>
-
-

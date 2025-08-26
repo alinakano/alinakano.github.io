@@ -189,7 +189,8 @@ allie does it on her own in 2025.
     .slider .prev { left: 10px; }
     .slider .next { right: 10px; }
 
-	/* Lightbox overlay */
+
+    /* Lightbox overlay */
     .lightbox {
       display: none;
       position: fixed;
@@ -201,8 +202,6 @@ allie does it on her own in 2025.
       justify-content: center;
       align-items: center;
       z-index: 1000;
-	  flex-direction: column;
-
     }
 
     .lightbox img {
@@ -210,30 +209,9 @@ allie does it on her own in 2025.
       max-height: 90%;
     }
 
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
+    .lightbox:target {
+      display: flex;
     }
-
-    .lightbox button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.7);
-      border: none;
-      font-size: 36px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      color: black;
-    }
-
-    .lightbox .prev { left: 30px; }
-    .lightbox .next { right: 30px; }
 	  
   </style>
 </head>
@@ -275,11 +253,6 @@ allie does it on her own in 2025.
 
   <script>
     const slideIndices = {};
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-
-    let currentSliderId = null;
-    let currentLightboxIndex = 0;
 
     function moveSlide(sliderId, direction) {
       const slider = document.getElementById(sliderId);
@@ -303,31 +276,15 @@ allie does it on her own in 2025.
       const offset = -slideIndices[sliderId] * 100;
       slides.style.transform = `translateX(${offset}%)`;
     }
-	  
-    function openLightbox(sliderId, index) {
-      currentSliderId = sliderId;
-      currentLightboxIndex = index;
-      updateLightboxImage();
-      lightbox.style.display = "flex";
+
+    function openLightbox(src) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox").style.display = "flex";
     }
 
     function closeLightbox() {
-      lightbox.style.display = "none";
+      document.getElementById("lightbox").style.display = "none";
     }
-
-    function moveLightbox(direction) {
-      const slider = document.getElementById(currentSliderId);
-      const images = slider.querySelectorAll('.slides img');
-      currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
-      updateLightboxImage();
-    }
-  
-    function updateLightboxImage() {
-      const slider = document.getElementById(currentSliderId);
-      const images = slider.querySelectorAll('.slides img');
-      lightboxImg.src = images[currentLightboxIndex].src;
-    }
-
   </script>
 
 </body>

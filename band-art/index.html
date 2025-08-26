@@ -159,6 +159,7 @@ allie does it on her own in 2025.
     .slider-section {
       margin-left: 200px; /* space for sidebar */
       max-width: 600px;
+	  margin-bottom: 50px; /* space between sliders */
     }
 
     .slider-section h1 {
@@ -170,8 +171,6 @@ allie does it on her own in 2025.
       position: relative;
       max-width: 600px;
       overflow: hidden;
-      border: 2px solid #ccc;
-      border-radius: 10px;
       background: white;
     }
 
@@ -201,13 +200,19 @@ allie does it on her own in 2025.
     .slider .prev { left: 10px; }
     .slider .next { right: 10px; }
 
-    /* Caption box */
+    /* Caption with fade effect */
     .caption {
       text-align: center;
       margin-top: 8px;
       font-size: 16px;
       color: #333;
-      min-height: 24px; /* keeps height stable */
+      min-height: 24px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .caption.show {
+      opacity: 1;
     }
 
     /* Lightbox */
@@ -258,6 +263,7 @@ allie does it on her own in 2025.
 </head>
 <body>
 
+  <!-- First Slider -->
   <div class="slider-section">
     <h1>Poster Slider</h1>
     <div class="slider" id="slider1">
@@ -273,21 +279,21 @@ allie does it on her own in 2025.
     <div class="caption" id="caption-slider1"></div>
   </div>
 
-
-	  <h1>Artwork Slider</h1>
-  <!-- Slider 2 -->
-  <div class="slider" id="slider2">
-    <div class="slides">
-      <img src="../images/band-art/3.jpg" alt="Poster 1" onclick="openLightbox(this.src)">
-      <img src="../images/band-art/11.jpg" alt="Poster 2" onclick="openLightbox(this.src)">
-      <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox(this.src)">
-      <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox(this.src)">
+  <!-- Second Slider -->
+  <div class="slider-section">
+    <h1>Artwork Slider</h1>
+    <div class="slider" id="slider2">
+      <div class="slides">
+        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
+        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
+        <img src="art3.jpg" alt="Art 3" onclick="openLightbox('slider2', 2)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
     </div>
-    <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
-    <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
+    <div class="caption" id="caption-slider2"></div>
   </div>
-	   <div class="caption" id="caption-slider1"></div>
-</div>
+
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -305,8 +311,14 @@ allie does it on her own in 2025.
         "Poster 2 — Bold Graphic Design",
         "Poster 3 — Minimalist Artwork",
         "Poster 4 — Abstract Collection"
+      ],
+      "slider2": [
+        "Art 1 — Contemporary Piece",
+        "Art 2 — Expressionist Study",
+        "Art 3 — Digital Collage"
       ]
     };
+
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -336,10 +348,14 @@ allie does it on her own in 2025.
 
       updateCaption(sliderId);
     }
-
+	  
     function updateCaption(sliderId) {
       const captionEl = document.getElementById("caption-" + sliderId);
-      captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+      captionEl.classList.remove("show"); // fade out
+      setTimeout(() => {
+        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+        captionEl.classList.add("show"); // fade in
+      }, 200);
     }
 
     function openLightbox(sliderId, index) {
@@ -366,8 +382,9 @@ allie does it on her own in 2025.
       lightboxImg.src = images[currentLightboxIndex].src;
     }
 
-    // Initialize first caption
+    // Initialize first captions
     updateCaption("slider1");
+    updateCaption("slider2");
   </script>
 
 </body>

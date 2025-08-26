@@ -82,7 +82,15 @@ header {
   color: gray;
 }
 
-
+/* collapsible menu on phone - TESTING */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+  #menu-toggle:checked + .nav-list {
+    display: block;
+  }
+}
 
 
 /* The container for all the stuff that isn't the header or links menu */
@@ -161,3 +169,4 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+

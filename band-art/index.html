@@ -1,7 +1,7 @@
 <!doctype html>
 
 <!--
-Dillon Bastan and Alina Kano 2023.
+allie does it on her own in 2025.
 -->
 
 <html>
@@ -139,4 +139,116 @@ Dillon Bastan and Alina Kano 2023.
 
 	</body>
 
+</html>
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Sliders</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+
+    .slider {
+      position: relative;
+      max-width: 800px;
+      margin: 40px auto;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slides img {
+      width: 33.33%; /* 3 visible at a time */
+      flex-shrink: 0;
+    }
+
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .slider .prev { left: 10px; }
+    .slider .next { right: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Poster Slider</h1>
+  <!-- Slider 1 -->
+  <div class="slider" id="slider1">
+    <div class="slides">
+      <img src="../images/band-art/11.jpg" alt="Poster 1">
+      <img src="../images/band-art/3.jpg" alt="Poster 2">
+      <img src="poster3.jpg" alt="Poster 3">
+      <img src="poster4.jpg" alt="Poster 4">
+      <img src="poster5.jpg" alt="Poster 5">
+    </div>
+    <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
+    <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+  </div>
+
+  <h1>Artwork Slider</h1>
+  <!-- Slider 2 -->
+  <div class="slider" id="slider2">
+    <div class="slides">
+      <img src="../images/band-art/2.jpg" alt="Art 1">
+      <img src="art2.jpg" alt="Art 2">
+      <img src="art3.jpg" alt="Art 3">
+      <img src="art4.jpg" alt="Art 4">
+    </div>
+    <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
+    <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
+  </div>
+
+  <script>
+    const slideIndices = {};
+    const visibleCount = 3; // number of images shown at once
+
+    function moveSlide(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      const slides = slider.querySelector('.slides');
+      const images = slides.querySelectorAll('img');
+
+      if (!(sliderId in slideIndices)) {
+        slideIndices[sliderId] = 0;
+      }
+
+      const maxIndex = images.length - visibleCount;
+      slideIndices[sliderId] += direction;
+
+      // Wrap around (infinite loop)
+      if (slideIndices[sliderId] < 0) {
+        slideIndices[sliderId] = maxIndex;
+      } else if (slideIndices[sliderId] > maxIndex) {
+        slideIndices[sliderId] = 0;
+      }
+
+      const offset = -slideIndices[sliderId] * (100 / visibleCount);
+      slides.style.transform = `translateX(${offset}%)`;
+    }
+  </script>
+
+</body>
 </html>

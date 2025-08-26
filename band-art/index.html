@@ -160,7 +160,7 @@ allie does it on her own in 2025.
 
     .slider-section h1 {
       margin-bottom: 10px;
-      padding-left: 10px; /* extra space so text doesn’t touch the slider edge */
+      padding-left: 200px; /* extra space so text doesn’t touch the slider edge */
     }
     .slider {
       position: relative;
@@ -197,6 +197,15 @@ allie does it on her own in 2025.
 
     .slider .prev { left: 10px; }
     .slider .next { right: 10px; }
+
+	/* Caption box */
+    .caption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 16px;
+      color: #333;
+      min-height: 24px; /* keeps height stable */
+    }
 
 
     /* Lightbox overlay */
@@ -237,6 +246,8 @@ allie does it on her own in 2025.
     </div>
     <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
     <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+    </div>
+	<div class="caption" id="caption-slider1"></div>
   </div>
 
   <h1>Artwork Slider</h1>
@@ -251,6 +262,8 @@ allie does it on her own in 2025.
     <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
     <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
   </div>
+	   <div class="caption" id="caption-slider1"></div>
+</div>
 
 <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
@@ -259,6 +272,15 @@ allie does it on her own in 2025.
 
   <script>
     const slideIndices = {};
+
+	      const captions = {
+      "slider1": [
+        "Poster 1 — Limited Edition Print",
+        "Poster 2 — Bold Graphic Design",
+        "Poster 3 — Minimalist Artwork",
+        "Poster 4 — Abstract Collection"
+      ]
+    };
 
     function moveSlide(sliderId, direction) {
       const slider = document.getElementById(sliderId);

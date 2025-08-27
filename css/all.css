@@ -144,7 +144,7 @@ h2 {
 
 /* Only applies to the posters page (body has .gallery-page) */
 .gallery-page .gallery {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
   gap: 5px; /* controls the space between columns */
   margin: 0;

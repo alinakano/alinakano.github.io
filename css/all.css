@@ -30,6 +30,7 @@ body {
 header {
 	background-color: #A8E6F7;
 	padding-top: 40px;
+	font: jacquard12-regular;
 }
 
 /* The main home link at the top "Alina Kano" */
@@ -168,4 +169,12 @@ h2 {
   .gallery-page .gallery {
     grid-template-columns: 1fr;
   }
+}
+
+/*font -does this work? */
+@font-face {
+  font-family: "jacquard12-regular";
+  src: url("fonts/jacquard12-regular.woff") format("woff"),
+  font-weight: normal;
+  font-style: normal;
 }

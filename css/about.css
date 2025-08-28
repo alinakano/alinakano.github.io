@@ -1,1 +1,22 @@
+/* Layout container */
+#pageBody {
+  display: flex;            /* put sidebar + content side by side */
+  padding-top: 60px;        /* space for header */
+  padding-left: 200px;      /* space for sidebar */
+  justify-content: center;  /* center the content horizontally */
+}
 
+/* Sidebar (keep it aligned left) */
+#mainLinks {
+  position: fixed;          /* sidebar stays on the left */
+  top: 60px;                /* below header */
+  left: 0;
+  width: 200px;             /* matches the padding-left above */
+}
+
+/* Main content centered */
+.mainContent {
+  max-width: 800px;         /* prevent it from being too wide */
+  width: 100%;
+  text-align: center;       /* center text/images inside */
+}

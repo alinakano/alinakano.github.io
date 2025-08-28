@@ -1,1 +1,5 @@
-
+.main-content {
+  margin: 0 auto;     /* Centers horizontally if container has a width */
+  max-width: 800px;   /* Or any max-width that suits your design */
+  padding: 0 1rem;    /* Optional side padding for responsiveness */
+}

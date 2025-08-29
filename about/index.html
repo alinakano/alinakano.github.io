@@ -55,16 +55,14 @@ allie does it on her own in 2025
       text-align: center;
     }
 
-    /* Responsive tweak: stack sidebar on small screens */
-    @media (max-width: 768px) {
-      #pageBody {
-        flex-direction: column;
-      }
-      #mainLinks {
-        width: 100%;
-        text-align: center;
-      }
-    }
+    /* On small screens, stack and let it scroll */
+	@media (max-width: 768px) {
+  	#mainLinks {
+    position: relative;   /* no longer fixed */
+    top: auto;
+    left: auto;
+    width: 100%;
+    text-align: center;
   </style>
 	</head>
 

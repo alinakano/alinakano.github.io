@@ -11,29 +11,59 @@ allie does it on her own in 2025
 		<link rel = "stylesheet" type = "text/css" href = "../css/contact.css"/>
 		<title>ALINA KANO</title>
 		
-<!-- Page-specific CSS -->
   <style>
-    /* Layout container */
+    /* Make the whole page use flex layout */
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;  /* header on top, rest below */
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 20px;
+      text-align: left; /* keeps your name aligned left */
+    }
+
+    /* Container for sidebar + main */
     #pageBody {
-      display: flex;             /* place sidebar + content side by side */
-      padding-top: 60px;         /* space for header */
-      padding-left: 200px;       /* space for sidebar */
-      justify-content: center;   /* center main content in remaining space */
+      display: flex;
+      flex: 1;                 /* take up full remaining height */
     }
 
     /* Sidebar */
     #mainLinks {
-      position: fixed;           /* keep sidebar in place */
-      top: 60px;                 /* below header */
-      left: 0;
-      width: 200px;              /* same as padding-left */
+      /*width: 200px;
+      padding: 20px;*/
+      flex-shrink: 0;           /* prevent it from shrinking */
     }
 
-    /* Main content area */
+    /* Main content */
     .mainContent {
-      max-width: 800px;          /* prevent stretching */
+      flex: 1;                  /* take remaining space */
+      display: flex;
+      justify-content: center;  /* center horizontally */
+      align-items: flex-start;  /* keep content aligned to top */
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    /* Inner wrapper so text/images don’t stretch too wide */
+    .mainContent > div {
+      max-width: 800px;
       width: 100%;
-      text-align: center;        /* center text/images inside */
+      text-align: center;
+    }
+
+    /* Responsive tweak: stack sidebar on small screens */
+    @media (max-width: 768px) {
+      #pageBody {
+        flex-direction: column;
+      }
+      #mainLinks {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 	</head>

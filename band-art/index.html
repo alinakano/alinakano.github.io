@@ -116,6 +116,15 @@ allie does it on her own in 2025.
 
     .lightbox .prev { left: 30px; }
     .lightbox .next { right: 30px; }
+
+ /* Responsive tweak: stack sidebar on small screens */
+    @media (max-width: 768px) {
+      #pageBody {
+        flex-direction: column;
+      }
+      #mainLinks {
+        width: 100%;
+        text-align: center;
   </style>
 	</head>
 

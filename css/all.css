@@ -83,15 +83,6 @@ header {
   color: gray;
 }
 
-/* collapsible menu on phone - TESTING */
-@media screen and (max-width: 768px) {
-  .nav-list {
-    display: none;
-  }
-  #menu-toggle:checked + .nav-list {
-    display: block;
-  }
-}
 
 
 /* The container for all the stuff that isn't the header or links menu */
@@ -105,13 +96,13 @@ header {
 h1 {
 	padding-top: 10px;
 	padding-left: 40px;
-	padding-bottom: 0px;
+	padding-bottom: 10px;
 	font-family: courier;
 	font-size: 16px;
 
 }
 h2 {
-	font-size: 16px;
+	font-size: 14px;
 	padding-left: 40px;
 	text-transform: uppercase;
 }

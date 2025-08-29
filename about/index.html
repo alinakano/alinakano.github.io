@@ -72,6 +72,9 @@ allie does it on her own in 2025
 			<a id="homeLink" href="../index.html">alina kano</a>
 		</header>
 
+		<!--toggle button for mobile-->
+		<button id="menuToggle">☰</button>
+
 		<!-- Page Content -->
 		<div id="pageBody">
 
@@ -98,5 +101,14 @@ allie does it on her own in 2025
 			</section>
 
 		</div>
+		
+	<!--java for toggle button-->
+	<script>
+  	const toggleButton = document.getElementById('menuToggle');
+ 	const nav = document.getElementById('mainLinks');
+  	toggleButton.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
 	</body>
 </html>

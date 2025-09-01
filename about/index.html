@@ -46,7 +46,7 @@
     }
     /* Inner wrapper so text/images don't stretch too wide */
     .mainContent > div {
-      max-width: 600px;
+      max-width: 600px;  /* Reduced from 800px to match image better */
       width: 100%;
       text-align: center;
     }
@@ -58,11 +58,11 @@
       display: block;
       margin: 0 auto;
     }
-
-	/* Match text width to image on desktop */
+    
+    /* Match text width to image on desktop */
     .mainContent h1 {
       max-width: 100%;  /* This will inherit the 600px from parent */
-      margin: 0px auto;
+      margin: 20px auto;
       text-align: center;
     }
     
@@ -91,7 +91,16 @@
       /* Center header on mobile and add top padding to avoid menu toggle */
       header {
         text-align: center;
-        padding: 60px 0 0px 0;  /* More top padding to clear the menu button */
+        padding: 60px 0 20px 0;  /* More top padding to clear the menu button */
+        width: 100%;
+        position: relative;
+        margin: 0;
+      }
+      
+      /* Ensure header link is centered */
+      header #homeLink {
+        display: inline-block;
+        text-align: center;
       }
       
       /* Show menu toggle on mobile */
@@ -117,25 +126,24 @@
         top: 0;
         left: -100%;
         width: 100vw;  /* Use viewport width */
-        height: 50vh; /* Use viewport height */
-        background: black;
+        height: 100vh; /* Use viewport height */
+        background: white;
         z-index: 999;
-        transition: left 0.3s ease; /* Smooth slide in AND out */
+        transition: left 0.3s ease;  /* Smooth slide in AND out */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
-        padding-top: 20px;
+        padding: 0;
         box-sizing: border-box;
       }
       
       /* Style navigation links on mobile */
       #mainLinks a {
-        font-size: 16px;
-		line-height: 20px;
+        font-size: 24px;
         text-decoration: none;
-        color: white;
+        color: inherit;
         text-align: center;
       }
       
@@ -147,7 +155,7 @@
       /* Remove desktop padding on mobile and center content */
       .mainContent {
         padding: 20px;
-        padding-left: 0px;  /* Reset the desktop padding */
+        padding-left: 20px;  /* Reset the desktop padding */
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -172,13 +180,13 @@
         width: auto;
         height: auto;
         display: block;
-        margin: 20px auto;
+        margin: 0 auto;
       }
       
       /* Center text under images on mobile */
       .mainContent h1 {
         text-align: center;
-        margin: 15px auto 0 auto;
+        margin: 20px auto 0 auto;
         padding: 0 10px;
         width: 90vw;  /* Match image width */
         max-width: 90vw;

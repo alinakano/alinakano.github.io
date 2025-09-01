@@ -1,13 +1,10 @@
 <!doctype html>
-
 <!--allie does it on her own in 2025-->
-
 <html>	
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "../css/contact.css"/>
 		<title>ALINA KANO</title>
-
 		<!--favicon-->
 		<link rel="icon" type="image/png" href="../images/favicon.png">
 		
@@ -19,25 +16,21 @@
       flex-direction: column;  /* header on top, rest below */
       min-height: 100vh;
     }
-
     header {
       padding: auto;
       text-align: left; /* keeps your name aligned left */
     }
-
     /* Container for sidebar + main */
     #pageBody {
       display: flex;
       flex: 1;                 /* take up full remaining height */
     }
-
     /* Sidebar */
     #mainLinks {
       width: AUTO;
       padding: auto;
       flex-shrink: 0;           /* prevent it from shrinking */
     }
-
     /* Main content */
     .mainContent {
       flex: 1;                  /* take remaining space */
@@ -46,38 +39,93 @@
       align-items: flex-start;  /* keep content aligned to top */
       padding: 20px;
       box-sizing: border-box;
+      /* Add left padding on desktop to account for sidebar */
+      padding-left: 200px;     /* Adjust this value based on your sidebar width */
     }
-
-    /* Inner wrapper so text/images don’t stretch too wide */
+    /* Inner wrapper so text/images don't stretch too wide */
     .mainContent > div {
       max-width: 800px;
       width: 100%;
       text-align: center;
     }
-
+    
+    /* Hide menu toggle on desktop */
+    #menuToggle {
+      display: none;
+    }
+    
     /* On small screens, stack and let it scroll */
-	@media (max-width: 768px) {
-  	#mainLinks {
-    position: relative;   /* no longer fixed */
-    top: auto;
-    left: auto;
-    width: 100%;
-    text-align: center;
+    @media (max-width: 768px) {
+      /* Center header on mobile */
+      header {
+        text-align: center;
+        padding: 15px 0;
+      }
+      
+      /* Show menu toggle on mobile */
+      #menuToggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+      }
+      
+      /* Stack layout vertically on mobile */
+      #pageBody {
+        flex-direction: column;
+      }
+      
+      #mainLinks {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        z-index: 999;
+        transition: left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      /* Show navigation when active */
+      #mainLinks.active {
+        left: 0;
+      }
+      
+      /* Remove desktop padding on mobile and center content */
+      .mainContent {
+        padding: 20px;
+        padding-left: 20px;  /* Reset the desktop padding */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+      /* Center the content wrapper */
+      .mainContent > div {
+        text-align: center;
+      }
+    }
   </style>
 	</head>
-
 	<body>
 		<!-- The header of the home link -->
 		<header>
 			<a id="homeLink" href="../index.html">alina kano</a>
 		</header>
-
 		<!--toggle button for mobile-->
 		<button id="menuToggle">☰</button>
-
 		<!-- Page Content -->
 		<div id="pageBody">
-
 			<!-- Main Links -->
 			<div id="mainLinks">
         		<a href="../index.html">home</a>
@@ -87,7 +135,6 @@
        			<a href="../about/index.html">about</a>
 				<a href="../contact/index.html">contact</a>
 			</div>
-
 			<!--  Work Content -->
 			<section class = "mainContent">
 				<div id="imageGallery">				
@@ -99,7 +146,6 @@
 					</h1>
 				</div>
 			</section>
-
 		</div>
 		
 	<!--java for toggle button-->

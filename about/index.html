@@ -62,7 +62,7 @@
     /* Match text width to image on desktop */
     .mainContent h1 {
       max-width: 100%;  /* This will inherit the 600px from parent */
-      margin: 0px auto;
+      margin: 20px auto;
       text-align: center;
     }
     
@@ -114,6 +114,12 @@
         font-size: 24px;
         cursor: pointer;
         z-index: 1000;
+        transition: transform 0.3s ease;
+      }
+      
+      /* Rotate arrow when menu is active */
+      #menuToggle.active {
+        transform: rotate(180deg);
       }
       
       /* Stack layout vertically on mobile */
@@ -123,13 +129,13 @@
       
       #mainLinks {
         position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100vw;  /* Use viewport width */
-        height: 100vh; /* Use viewport height */
+        top: -100%;  /* Start above screen instead of left */
+        left: 0;     /* Full width from left edge */
+        width: 100vw;
+        height: 100vh;
         background: white;
         z-index: 999;
-        transition: left 0.3s ease;  /* Smooth slide in AND out */
+        transition: top 0.3s ease;  /* Animate top instead of left */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -149,7 +155,7 @@
       
       /* Show navigation when active */
       #mainLinks.active {
-        left: 0;
+        top: 0;  /* Slide down to visible position */
       }
       
       /* Remove desktop padding on mobile and center content */
@@ -210,7 +216,7 @@
 			<a id="homeLink" href="../index.html">alina kano</a>
 		</header>
 		<!--toggle button for mobile-->
-		<button id="menuToggle">☰</button>
+		<button id="menuToggle">▼</button>
 		<!-- Page Content -->
 		<div id="pageBody">
 			<!-- Main Links -->
@@ -241,6 +247,7 @@
  	const nav = document.getElementById('mainLinks');
   	toggleButton.addEventListener('click', () => {
     nav.classList.toggle('active');
+    toggleButton.classList.toggle('active');  // Toggle the button rotation
   });
 </script>
 	</body>

@@ -120,18 +120,19 @@
         height: 50vh; /* Use viewport height */
         background: black;
         z-index: 999;
-        transition: left 0.3s ease; /* Smooth slide in AND out */
+        transition: down 0.3s ease; /* Smooth slide in AND out */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
-        padding: 20;
+        padding: 0;
         box-sizing: border-box;
       }
       
       /* Style navigation links on mobile */
       #mainLinks a {
+		padding-top: 20px;
         font-size: 16px;
 		line-height: 20px;
         text-decoration: none;
@@ -172,7 +173,7 @@
         width: auto;
         height: auto;
         display: block;
-        margin: 0 auto;
+        margin: 20 auto;
       }
       
       /* Center text under images on mobile */

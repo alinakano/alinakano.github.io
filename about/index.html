@@ -64,8 +64,23 @@
       display: none;
     }
     
+    /* Desktop responsive behavior - narrow content instead of stacking */
+    @media (min-width: 769px) and (max-width: 1200px) {
+      .mainContent {
+        padding-left: 180px;  /* Reduce padding as screen gets smaller */
+        padding-right: 40px;
+      }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1000px) {
+      .mainContent {
+        padding-left: 160px;  /* Even less padding for smaller desktop screens */
+        padding-right: 30px;
+      }
+    }
+    
     /* On small screens, stack and let it scroll */
-    @media (max-width: 414px) {
+    @media (max-width: 768px) {
       /* Center header on mobile and add top padding to avoid menu toggle */
       header {
         text-align: center;
@@ -98,7 +113,7 @@
         height: 100vh; /* Use viewport height */
         background: white;
         z-index: 999;
-        transition: left 0.3s ease;
+        transition: left 0.3s ease;  /* Smooth slide in AND out */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -110,7 +125,7 @@
       
       /* Style navigation links on mobile */
       #mainLinks a {
-        font-size: 16px;
+        font-size: 24px;
         text-decoration: none;
         color: inherit;
         text-align: center;

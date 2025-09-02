@@ -29,19 +29,16 @@
     }
     /* Sidebar */
     #mainLinks {
-      width: AUTO;
-      padding: auto;
       flex-shrink: 0;           /* prevent it from shrinking */
     }
     /* Main content */
     .mainContent {
       flex: 1;                  /* take remaining space */
-      display: flex;
+      display: fixed;
       justify-content: center;  /* center horizontally */
       align-items: flex-start;  /* keep content aligned to top */
-      padding: 20px;
-      box-sizing: border-box;
-      /* Add left padding on desktop to account for sidebar */
+      padding: 30px;
+      box-sizing: border-box;   /* Add left padding on desktop to account for sidebar */
       padding-left: 200px;     /* Adjust this value based on your sidebar width */
     }
     /* Inner wrapper so text/images don't stretch too wide */
@@ -62,7 +59,7 @@
     /* Match text width to image on desktop */
     .mainContent h1 {
       max-width: 100%;  /* This will inherit the 600px from parent */
-      margin: 20px auto;
+      margin: auto;
       text-align: center;
     }
     

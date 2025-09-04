@@ -11,112 +11,39 @@
 		<link rel="icon" type="image/png" href="../images/favicon.png">
 	<style>
 
-    .slider-section {
-      margin-left: 40px; /* space for sidebar */
-      max-width: 600px;
-	  margin-bottom: 50px; /* space between sliders */
-    }
+/*TESTING OLD SLIDER*/
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: 40px auto;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
 
-    .slider-section h2 {
-      margin-bottom: 5px;
-	  text-align: left;
-      padding-left: 0px;
-    }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .slider {
-      position: relative;
-      max-width: 600px;
-      overflow: hidden;
-      background: white;
-    }
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+}
 
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
 
-    .slides img {
-      width: 100%;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
+.slider .prev { left: 10px; }
+.slider .next { right: 10px; }
 
-    .slider button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      font-size: 24px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-
-    .slider .prev { left: 10px; }
-    .slider .next { right: 10px; }
-
-  	/* Captions */
-  	.caption {
-    	text-align: center;
-		font-style: italic;
-   		margin-top: 8px;
-    	font-size: 10px;
-    	color: #333;
-    	min-height: 20px;
-    	opacity: 1;
-		transition: opacity 0.3s ease-in-out;
-		display: block;
-  	}
-  	
-  	.caption.show {
-  		opacity: 1;
-  	}
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-direction: column;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-    }
-
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    }
-
-    .lightbox button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.7);
-      border: none;
-      font-size: 36px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      color: black;
-    }
-
-    .lightbox .prev { left: 30px; }
-    .lightbox .next { right: 30px; }
 
  /* Responsive tweak: stack sidebar on small screens */
     @media (max-width: 768px) {
@@ -186,7 +113,19 @@
  		   </div>
 	   		<div class="caption" id="caption-slider1"></div>
  			</div>
-					
+
+<!--WORKING SLIDER TEST-->
+<!-- Slider 1 -->
+<div class="slider" id="slider1">
+  <div class="slides">
+    <img src="poster1.jpg" alt="Poster 1">
+    <img src="poster2.jpg" alt="Poster 2">
+    <img src="poster3.jpg" alt="Poster 3">
+  </div>
+  <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
+  <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+</div>
+		
 
 					<h2>slice - T-Shirt/merch Designs (2022)</h2>
 					<figure>
@@ -399,6 +338,31 @@
       }
     });
   </script>
+
+
+<!--SLIDER TEST-->
+	<script>
+  // Track the current slide index for each slider
+  const slideIndices = {};
+
+  function moveSlide(sliderId, direction) {
+    const slider = document.getElementById(sliderId);
+    const slides = slider.querySelector('.slides');
+    const images = slides.querySelectorAll('img');
+
+    // Initialize index if not set
+    if (!(sliderId in slideIndices)) {
+      slideIndices[sliderId] = 0;
+    }
+
+    // Update index
+    slideIndices[sliderId] = (slideIndices[sliderId] + direction + images.length) % images.length;
+
+    // Shift slides
+    const offset = -slideIndices[sliderId] * 100;
+    slides.style.transform = `translateX(${offset}%)`;
+  }
+</script>
 
 </body>
 </html>

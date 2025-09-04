@@ -28,7 +28,7 @@ body {
 header {
 	background-color: #A8E6F7;
 	padding-top: 50px;
-	font: jacquard12-regular;
+	font-family: Jacquard12-Regular;
 }
 
 /* The main home link at the top "Alina Kano" */
@@ -73,7 +73,7 @@ header {
 	color: black;
 }
 #mainLinks a:hover {
-  color: blue;
+  color: #f54937;
 }
 
 /* The container for all the stuff that isn't the header or links menu */
@@ -91,13 +91,11 @@ h1 {
 	padding-bottom: 10px;
 	font-family: courier;
 	font-size: 16px;
-	font-style: light;
 
 }
 h2 {
 	font-size: 14px;
 	padding-left: 40px;
-	text-transform: uppercase;
 }
 
 /* The container of images of your works */

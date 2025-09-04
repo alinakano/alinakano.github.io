@@ -1,9 +1,7 @@
 <!doctype html>
-
 <!--
 allie does it on her own in 2025
 -->
-
 <html>
 	
 	<head>
@@ -22,26 +20,45 @@ allie does it on her own in 2025
       border-radius: 12px;
       box-shadow: none;
       text-align: center;
-
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 1s ease-out forwards;
     }
-
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
+    
+    /* Center the main heading and keep it with the form */
+    .mainContent {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 80px; /* Add space below nav */
+      margin-bottom: 0; /* Remove bottom margin to stick to form */
+    }
+    
+    /* Adjust contact section to stick with heading */
+    #contact {
+      margin-top: 20px; /* Reduce top margin to stick with heading */
+      margin-bottom: 50px;
+    }
+    
+    /* Ensure content doesn't overlap with nav on narrow screens */
+    #pageBody {
+      margin-top: 60px; /* Adjust based on your nav height */
+      min-height: calc(100vh - 60px);
+    }
+    
     .contact-form {
       display: flex;
       flex-direction: column;
       gap: 15px;
       text-align: left;
     }
-
     .contact-form input,
     .contact-form textarea {
       padding: 12px;
@@ -51,7 +68,6 @@ allie does it on her own in 2025
       width: 100%;
       box-sizing: border-box;
     }
-
     .contact-form button {
       padding: 12px;
       background: #A8E6F7;
@@ -62,26 +78,35 @@ allie does it on her own in 2025
       cursor: pointer;
       transition: background 0.3s ease;
     }
-
     .contact-form button:hover {
       background: #555;
     }
+    
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .mainContent {
+        margin-top: 100px; /* More space on mobile if nav is larger */
+        padding: 0 15px;
+      }
+      
+      #contact {
+        margin: 15px auto 30px;
+        padding: 15px;
+      }
+      
+      #pageBody {
+        margin-top: 80px; /* Adjust for mobile nav if needed */
+      }
+    }
   </style>
 			</head>
-
 	<body>
-
-
 		<!--  The header of the home link -->
 		<header>
 			<a id="homeLink" href="../index.html">alina kano</a>
 		</header>
-
-
 		<!-- Page Content -->
 		<div id="pageBody">
-
-
 			<!-- Main Links -->
 			<div id="mainLinks">
         		<a href="../index.html">home</a>
@@ -91,51 +116,42 @@ allie does it on her own in 2025
        			<a href="../about/index.html">about</a>
 				<a href="../contact/index.html">contact</a>
 			</div>
-
-
 			<!--  Work Content -->
-			<section class = "mainContent">
-    <h1>contact me for commissions, collaborations and anything else :)</h1>
+			<section class="mainContent">
+                <h1>contact me for commissions, collaborations and anything else :)</h1>
 			</section>
-
-<body>
-  <section id="contact">
-	<form id="contact-form" action="https://formspree.io/f/mrbagwob" method="POST" class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="_replyto" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
-	  
-  <!-- Success message (hidden at first) -->
-  <p id="form-status" style="display:none; color:green; margin-top:10px;">
-    ✅ Message sent!
-  </p>
-	  
-  </section>
+            
+            <section id="contact">
+                <form id="contact-form" action="https://formspree.io/f/mrbagwob" method="POST" class="contact-form">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required>
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="_replyto" required>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" required></textarea>
+                  <button type="submit">Send</button>
+                </form>
+                
+              <!-- Success message (hidden at first) -->
+              <p id="form-status" style="display:none; color:green; margin-top:10px;">
+                ✅ Message sent!
+              </p>
+                
+            </section>
 	
  <!--java for contact box not redirecting-->
 	<script>
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault(); // stop normal redirect
     const data = new FormData(form);
-
     try {
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
         headers: { 'Accept': 'application/json' }
       });
-
       if (response.ok) {
         status.style.display = "block"; // show "sent" message
         form.reset(); // clear form fields
@@ -152,11 +168,6 @@ allie does it on her own in 2025
   });
 </script>
 	
-</body>
-
-
 		</div>
-
 	</body>
-
 </html>

@@ -1,4 +1,4 @@
-	<!doctype html>
+<!doctype html>
 
 <!--allie does it on her own in 2025.-->
 
@@ -59,17 +59,19 @@
   	/* Captions */
   	.caption {
     	text-align: center;
-		text-transform: italic;
+		font-style: italic;
    		margin-top: 8px;
     	font-size: 10px;
     	color: #333;
     	min-height: 20px;
     	opacity: 1;
-		
-    /* transition: opacity 0.5s ease-in-out; */
-		display: block;  /* ensures it's visible */
+		transition: opacity 0.3s ease-in-out;
+		display: block;
   	}
-  	/* .caption.fade-out { opacity: 0; } */
+  	
+  	.caption.show {
+  		opacity: 1;
+  	}
 
     /* Lightbox */
     .lightbox {
@@ -124,11 +126,12 @@
       #mainLinks {
         width: 100%;
         text-align: center;
+      }
+    }
   </style>
 	</head>
 
 <body>
-
 
 		<!--  The header of the home link -->
 		<header>
@@ -177,8 +180,6 @@
 		      <div class="slides">
 		        <img src="../images/band-art/9.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
 		        <img src="../images/band-art/8.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
-		        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
-     			<img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
 		      </div>
     		<button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
   		    <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
@@ -246,50 +247,26 @@
 			<p>"Nonsense Mouth" Album Cover Artwork (outtake)</p>
 			</figure>					
 
-					<h2>mind monogram - "Ivory Hall" Album (2018)</h2>
-					<figure>
-						<a href="../images/band-art/full-size/3.jpg"> <img src="../images/band-art/3.jpg"></a>
-						<p>"Ivory Hall" Album Cover Artwork</p>
-					</figure>
+			<!-- Mind Monogram Slider -->
+			<div class="slider-section">
+		    <h1>mind monogram - "Ivory Hall" Album (2018)</h1>
+		    <div class="slider" id="slider2">
+		      <div class="slides">
+		        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
+		        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
+		      </div>
+    		<button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
+  		    <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
+ 		   </div>
+	   		<div class="caption" id="caption-slider2"></div>
+ 			</div>
 
-					<h2>slice - "Slice" Single Cover (2018)</h2>
-					<figure>
-						<a href="../images/band-art/full-size/11.jpg"> <img src="../images/band-art/11.jpg"></a>
-						<p>"Slice" Single Cover Artwork</p>
-					</figure>
+			</div>
 
-				
-				</div>
-
-			</section>
+		</section>
 
 
 		</div>
-
-
-	</body>
-
-
-
-<body>
-
-
-
-  <!-- Second Slider -->
-  <div class="slider-section">
-    <h1>MIND MONOGRAM (2018) <br>
-		Album artwork for 'Ivory Hall'</h1>
-    <div class="slider" id="slider2">
-      <div class="slides">
-        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
-        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
-        <img src="art3.jpg" alt="Art 3" onclick="openLightbox('slider2', 2)">
-      </div>
-      <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
-      <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
-    </div>
-    <div class="caption" id="caption-slider2"></div>
-  </div>
 
 
   <!-- Lightbox -->
@@ -303,20 +280,15 @@
   <script>
     const slideIndices = {};
     const captions = {
-
-	/*SLICE II*/
       "slider1": [
         ""II" EP Cover Artwork - formatted for CD/Vinyl",
-        ""II" EP Back Cover Artwork - formatted for CD/Vinyl",
-        "Poster 3",
-        "Poster 4"
+        ""II" EP Back Cover Artwork - formatted for CD/Vinyl"
       ],
       "slider2": [
         "'Ivory Hall' Album Cover Artwork",
-        "Printed T-shirt for Ivory Hall - NEEDS UPDATE"
+        "'Slice' Single Cover Artwork"
       ]
     };
-
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -349,11 +321,13 @@
 	  
     function updateCaption(sliderId) {
       const captionEl = document.getElementById("caption-" + sliderId);
-      captionEl.classList.remove("show"); // fade out
-      setTimeout(() => {
-        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
-        captionEl.classList.add("show"); // fade in
-      }, 200);
+      if (captionEl && captions[sliderId]) {
+        captionEl.classList.remove("show");
+        setTimeout(() => {
+          captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+          captionEl.classList.add("show");
+        }, 150);
+      }
     }
 
     function openLightbox(sliderId, index) {
@@ -380,9 +354,16 @@
       lightboxImg.src = images[currentLightboxIndex].src;
     }
 
-    // Initialize first captions
-    updateCaption("slider1");
-    updateCaption("slider2");
+    // Initialize sliders
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize slide indices
+      slideIndices["slider1"] = 0;
+      slideIndices["slider2"] = 0;
+      
+      // Set initial captions
+      updateCaption("slider1");
+      updateCaption("slider2");
+    });
   </script>
 
 </body>

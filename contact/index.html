@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--
 allie does it on her own in 2025
@@ -85,17 +86,24 @@ allie does it on her own in 2025
     /* Responsive adjustments */
     @media (max-width: 600px) {
       .mainContent {
-        margin-top: 100px; /* More space on mobile if nav is larger */
-        padding: 0 15px;
+        margin-top: 50px !important; /* Normal spacing on mobile */
+        padding: 0 15px !important;
+      }
+      
+      .mainContent h1 {
+        text-align: center !important;
       }
       
       #contact {
-        margin: 15px auto 30px;
-        padding: 15px;
+        margin: 15px auto 30px auto !important;
+        padding: 15px !important;
       }
       
+      /* On narrow screens, the sidebar might stack or hide */
       #pageBody {
-        margin-top: 80px; /* Adjust for mobile nav if needed */
+        margin-left: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
       }
     }
   </style>

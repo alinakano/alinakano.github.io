@@ -156,7 +156,7 @@ h2 {
 /*font -does this work? */
 @font-face {
   font-family: "jacquard12-regular";
-  src: url("fonts/jacquard12-regular.woff") format("woff"),
+  src: url(".../fonts/jacquard12-regular.woff") format("woff"),
   font-weight: normal;
   font-style: normal;
 }

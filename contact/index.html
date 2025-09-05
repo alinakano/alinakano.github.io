@@ -71,6 +71,21 @@ allie does it on her own in 2025
     .contact-form button:hover {
       background: #555;
     }
+
+.form-status {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  color: green;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+.form-status.show {
+  opacity: 1;
+}
+.form-status.error {
+  color: red;
+}
     
     /* Responsive adjustments */
     @media (max-width: 600px) {
@@ -128,42 +143,59 @@ allie does it on her own in 2025
                   <textarea id="message" name="message" rows="5" required></textarea>
                   <button type="submit">Send</button>
                 </form>
-                
-              <!-- Success message (hidden at first) -->
+            
+              <!-- Success message (hidden at first) 
               <p id="form-status" style="display:none; color:green; margin-top:10px;">
                 ✅ Message sent!
+				  -->
+
+				<!--trying..-->
+				  <p id="form-status" class="form-status">✅ Message sent!</p>
               </p>
                 
             </section>
 	
  <!--java for contact box not redirecting-->
-	<script>
+<script>
   const form = document.getElementById("contact-form");
   const status = document.getElementById("form-status");
+
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stop normal redirect
+    e.preventDefault();
     const data = new FormData(form);
+
     try {
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
         headers: { 'Accept': 'application/json' }
       });
+
       if (response.ok) {
-        status.style.display = "block"; // show "sent" message
-        form.reset(); // clear form fields
+        showMessage("✅ Message sent!", "success");
+        form.reset();
       } else {
-        status.textContent = "⚠️ Oops! Something went wrong.";
-        status.style.color = "red";
-        status.style.display = "block";
+        showMessage("⚠️ Oops! Something went wrong.", "error");
       }
     } catch (error) {
-      status.textContent = "⚠️ Network error. Please try again.";
-      status.style.color = "red";
-      status.style.display = "block";
+      showMessage("⚠️ Network error. Please try again.", "error");
     }
   });
+
+  function showMessage(text, type) {
+    status.textContent = text;
+    status.classList.remove("error", "success", "show");
+    if (type === "error") status.classList.add("error");
+    else status.classList.add("success");
+
+    // Fade in
+    setTimeout(() => status.classList.add("show"), 50);
+
+    // Fade out after 3s
+    setTimeout(() => status.classList.remove("show"), 3000);
+  }
 </script>
+
 	
 		</div>
 	</body>

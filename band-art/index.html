@@ -1,5 +1,4 @@
 <!doctype html>
-
 <!--allie does it on her own in 2025.-->
 
 <html>	
@@ -12,38 +11,111 @@
 	<style>
 
 /*TESTING OLD SLIDER*/
-.slider {
-  position: relative;
-  max-width: 600px;
-  margin: 0px auto;
-  overflow: hidden;
-  border: 0px solid #ccc;
-  border-radius: 10px;
-}
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      margin: 0;
+    }
 
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
+    .slider-section {
+      margin-left: 200px; /* space for sidebar */
+      max-width: 600px;
+    }
 
-.slides img {
-  width: 100%;
-  flex-shrink: 0;
-}
+    .slider-section h1 {
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
 
-.slider button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
+    .slider {
+      position: relative;
+      max-width: 600px;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background: white;
+    }
 
-.slider .prev { left: 10px; }
-.slider .next { right: 10px; }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .slider .prev { left: 10px; }
+    .slider .next { right: 10px; }
+
+    /* Caption box */
+    .caption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 16px;
+      color: #333;
+      min-height: 24px; /* keeps height stable */
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      border: none;
+      font-size: 36px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      color: black;
+    }
+
+    .lightbox .prev { left: 30px; }
+    .lightbox .next { right: 30px; }
   </style>
 	</head>
 
@@ -105,15 +177,21 @@
 
 <!--WORKING SLIDER TEST-->
 <!-- Slider 1 -->
-<div class="slider" id="slider1">
-  <div class="slides">
-    <img src="poster1.jpg" alt="Poster 1">
-    <img src="poster2.jpg" alt="Poster 2">
-    <img src="poster3.jpg" alt="Poster 3">
+
+  <div class="slider-section">
+    <h1>Poster Slider</h1>
+    <div class="slider" id="slider1">
+      <div class="slides">
+        <img src="poster1.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
+        <img src="poster2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
+        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
+        <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider1"></div>
   </div>
-  <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
-  <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
-</div>
 		
 
 					<h2>slice - T-Shirt/merch Designs (2022)</h2>
@@ -191,13 +269,7 @@
 
 			</div>
 
-		</section>
-
-
-		</div>
-
-
-  <!-- Lightbox -->
+		  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <button class="prev" onclick="moveLightbox(-1)">❮</button>
@@ -205,6 +277,12 @@
     <button class="next" onclick="moveLightbox(1)">❯</button>
   </div>
 
+		</section>
+
+
+		</div>
+	
+<!--
   <script>
     // Initialize slide indices for each slider
     const slideIndices = {
@@ -328,30 +406,80 @@
     });
   </script>
 
-
+-->
 <!--SLIDER TEST-->
 	<script>
-  // Track the current slide index for each slider
-  const slideIndices = {};
+    const slideIndices = {};
+    const captions = {
+      "slider1": [
+        "Poster 1 — Limited Edition Print",
+        "Poster 2 — Bold Graphic Design",
+        "Poster 3 — Minimalist Artwork",
+        "Poster 4 — Abstract Collection"
+      ]
+    };
 
-  function moveSlide(sliderId, direction) {
-    const slider = document.getElementById(sliderId);
-    const slides = slider.querySelector('.slides');
-    const images = slides.querySelectorAll('img');
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    let currentSliderId = null;
+    let currentLightboxIndex = 0;
 
-    // Initialize index if not set
-    if (!(sliderId in slideIndices)) {
-      slideIndices[sliderId] = 0;
+    function moveSlide(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      const slides = slider.querySelector('.slides');
+      const images = slides.querySelectorAll('img');
+
+      if (!(sliderId in slideIndices)) {
+        slideIndices[sliderId] = 0;
+      }
+
+      const maxIndex = images.length - 1;
+      slideIndices[sliderId] += direction;
+
+      if (slideIndices[sliderId] < 0) {
+        slideIndices[sliderId] = maxIndex;
+      } else if (slideIndices[sliderId] > maxIndex) {
+        slideIndices[sliderId] = 0;
+      }
+
+      const offset = -slideIndices[sliderId] * 100;
+      slides.style.transform = `translateX(${offset}%)`;
+
+      updateCaption(sliderId);
     }
 
-    // Update index
-    slideIndices[sliderId] = (slideIndices[sliderId] + direction + images.length) % images.length;
+    function updateCaption(sliderId) {
+      const captionEl = document.getElementById("caption-" + sliderId);
+      captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+    }
 
-    // Shift slides
-    const offset = -slideIndices[sliderId] * 100;
-    slides.style.transform = `translateX(${offset}%)`;
-  }
-</script>
+    function openLightbox(sliderId, index) {
+      currentSliderId = sliderId;
+      currentLightboxIndex = index;
+      updateLightboxImage();
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+    }
+
+    function moveLightbox(direction) {
+      const slider = document.getElementById(currentSliderId);
+      const images = slider.querySelectorAll('.slides img');
+      currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
+      updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+      const slider = document.getElementById(currentSliderId);
+      const images = slider.querySelectorAll('.slides img');
+      lightboxImg.src = images[currentLightboxIndex].src;
+    }
+
+    // Initialize first caption
+    updateCaption("slider1");
+  </script>
 
 </body>
 </html>

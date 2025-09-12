@@ -337,14 +337,10 @@ allie does it on her own in 2025.
       updateCaption(sliderId);
     }
 	  
-    function updateCaption(sliderId) {
-      const captionEl = document.getElementById("caption-" + sliderId);
-      captionEl.classList.remove("show"); // fade out
-      setTimeout(() => {
-        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
-        captionEl.classList.add("show"); // fade in
-      }, 200);
-    }
+	function updateCaption(sliderId) {
+	const captionEl = document.getElementById("caption-" + sliderId);
+	captionEl.textContent = captions[sliderId][slideIndices[sliderId] || 0];
+	}
 
     function openLightbox(sliderId, index) {
       currentSliderId = sliderId;

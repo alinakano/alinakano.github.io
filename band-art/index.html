@@ -322,6 +322,7 @@ allie does it on her own in 2025.
         slideIndices[sliderId] = 0;
       }
 
+		/* SEEING IF DELETING THIS CHANGES OFFSET IN IMAGES
       const maxIndex = images.length - 1;
       slideIndices[sliderId] += direction;
 
@@ -330,6 +331,7 @@ allie does it on her own in 2025.
       } else if (slideIndices[sliderId] > maxIndex) {
         slideIndices[sliderId] = 0;
       }
+	  */
 
       const offset = -slideIndices[sliderId] * 100;
       slides.style.transform = `translateX(${offset}%)`;

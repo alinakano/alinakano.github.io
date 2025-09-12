@@ -266,78 +266,88 @@
 		</div>
 	
 <!--SLIDER JAVA-->
-	<script>
-    const slideIndices = {};
-    const captions = {
-      "slider1": [
-        "Poster 1 — Limited Edition Print",
-        "Poster 2 — Bold Graphic Design",
-        "Poster 3 — Minimalist Artwork",
-        "Poster 4 — Abstract Collection"
-      ]
-    };
+<script>
+  const slideIndices = {};
+  const captions = {
+    "slider1": [
+      "Slice II — Cover Artwork",
+      "Slice II — Alternate Design"
+    ],
+    "slider2": [
+      "Mind Monogram — Ivory Hall Artwork",
+      "Mind Monogram — Vinyl Back Cover"
+    ]
+  };
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    let currentSliderId = null;
-    let currentLightboxIndex = 0;
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  let currentSliderId = null;
+  let currentLightboxIndex = 0;
 
-    function moveSlide(sliderId, direction) {
-      const slider = document.getElementById(sliderId);
-      const slides = slider.querySelector('.slides');
-      const images = slides.querySelectorAll('img');
+  function moveSlide(sliderId, direction) {
+    const slider = document.getElementById(sliderId);
+    const slides = slider.querySelector('.slides');
+    const images = slides.querySelectorAll('img');
 
-      if (!(sliderId in slideIndices)) {
-        slideIndices[sliderId] = 0;
-      }
-
-      const maxIndex = images.length - 1;
-      slideIndices[sliderId] += direction;
-
-      if (slideIndices[sliderId] < 0) {
-        slideIndices[sliderId] = maxIndex;
-      } else if (slideIndices[sliderId] > maxIndex) {
-        slideIndices[sliderId] = 0;
-      }
-
-      const offset = -slideIndices[sliderId] * 100;
-      slides.style.transform = `translateX(${offset}%)`;
-
-      updateCaption(sliderId);
+    if (!(sliderId in slideIndices)) {
+      slideIndices[sliderId] = 0;
     }
 
-    function updateCaption(sliderId) {
-      const captionEl = document.getElementById("caption-" + sliderId);
+    const maxIndex = images.length - 1;
+    slideIndices[sliderId] += direction;
+
+    if (slideIndices[sliderId] < 0) {
+      slideIndices[sliderId] = maxIndex;
+    } else if (slideIndices[sliderId] > maxIndex) {
+      slideIndices[sliderId] = 0;
+    }
+
+    const offset = -slideIndices[sliderId] * 100;
+    slides.style.transform = `translateX(${offset}%)`;
+
+    updateCaption(sliderId);
+  }
+
+  function updateCaption(sliderId) {
+    const captionEl = document.getElementById("caption-" + sliderId);
+    if (captions[sliderId]) {
       captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
     }
+  }
 
-    function openLightbox(sliderId, index) {
-      currentSliderId = sliderId;
-      currentLightboxIndex = index;
-      updateLightboxImage();
-      lightbox.style.display = "flex";
-    }
+  function openLightbox(sliderId, index) {
+    currentSliderId = sliderId;
+    currentLightboxIndex = index;
+    updateLightboxImage();
+    lightbox.style.display = "flex";
+  }
 
-    function closeLightbox() {
-      lightbox.style.display = "none";
-    }
+  function closeLightbox() {
+    lightbox.style.display = "none";
+  }
 
-    function moveLightbox(direction) {
-      const slider = document.getElementById(currentSliderId);
-      const images = slider.querySelectorAll('.slides img');
-      currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
-      updateLightboxImage();
-    }
+  function moveLightbox(direction) {
+    const slider = document.getElementById(currentSliderId);
+    const images = slider.querySelectorAll('.slides img');
+    currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
+    updateLightboxImage();
+  }
 
-    function updateLightboxImage() {
-      const slider = document.getElementById(currentSliderId);
-      const images = slider.querySelectorAll('.slides img');
-      lightboxImg.src = images[currentLightboxIndex].src;
-    }
+  function updateLightboxImage() {
+    const slider = document.getElementById(currentSliderId);
+    const images = slider.querySelectorAll('.slides img');
+    lightboxImg.src = images[currentLightboxIndex].src;
+  }
 
-    // Initialize first caption
-    updateCaption("slider1");
-  </script>
+  // Initialize captions for all sliders
+  window.onload = function() {
+    Object.keys(captions).forEach(sliderId => {
+      slideIndices[sliderId] = 0; // start at first image
+      updateCaption(sliderId);
+    });
+  }
+</script>
+
 
 </body>
 </html>

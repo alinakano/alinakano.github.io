@@ -1,38 +1,34 @@
 <!doctype html>
-<!--allie does it on her own in 2025.-->
 
-<html>	
+<!--
+allie does it on her own in 2025.
+-->
+
+<html>
+	
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "../css/band-art.css"/>
 		<title>ALINA KANO</title>
-		<!--favicon-->
-		<link rel="icon" type="image/png" href="../images/favicon.png">
-	<style>
-
-/*TESTING OLD SLIDER*/
-    body {
-      background: #f9f9f9;
-      padding: 0px;
-      margin: 0;
-    }
+		  <style>
 
     .slider-section {
-      margin-left: 20px; /* space for sidebar */
+      margin-left: 200px; /* space for sidebar */
       max-width: 600px;
+	  margin-bottom: 50px; /* space between sliders */
     }
 
     .slider-section h1 {
       margin-bottom: 10px;
-      padding-left: 0px;
+	  text-align: center;
+      font-size: 1.2em;
+      padding-left: 10px;
     }
 
     .slider {
-      position: flex;
+      position: relative;
       max-width: 600px;
       overflow: hidden;
-		  margin: 40px auto;
-      border: 0px;
       background: white;
     }
 
@@ -62,14 +58,18 @@
     .slider .prev { left: 10px; }
     .slider .next { right: 10px; }
 
-    /* Caption box */
-    .caption {
-      text-align: center;
-      margin-top: 8px;
-      font-size: 16px;
-      color: #333;
-      min-height: 24px; /* keeps height stable */
-    }
+  /* Captions */
+  .caption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    min-height: 20px;
+    opacity: 1;
+    /* transition: opacity 0.5s ease-in-out; */
+	display: block;  /* ensures it's visible */
+  }
+  /* .caption.fade-out { opacity: 0; } */
 
     /* Lightbox */
     .lightbox {
@@ -118,17 +118,20 @@
   </style>
 	</head>
 
-<body>
+	<body>
+
 
 		<!--  The header of the home link -->
 		<header>
-		<a id="homeLink" href="../index.html">alina kano</a>
+			<a id="homeLink" href="../index.html">alina kano</a>
 		</header>
+
 
 		<!-- Page Content -->
 		<div id="pageBody">
 
-		<!-- Main Links -->
+
+			<!-- Main Links -->
 			<div id="mainLinks">
         		<a href="../index.html">home</a>
 				<a href="../selected-work/index.html">drawings</a>
@@ -138,44 +141,36 @@
 				<a href="../contact/index.html">contact</a>
 			</div>
 
-			
 
-<!--WORK CONTENT-->
-	<section class = "mainContent">
-	<h1>COMMISSIONS FOR ARTISTS AND BANDS</h1>
-	<div id="imageGallery">
+			<!--  Work Content -->
+			<section class = "mainContent">
 
-		
-			<!--Take Kare 2025-->
-			<h2>take kare - "won't let the world" single (2025)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/karen.jpg"> <img src="../images/band-art/karen.jpg"></a>
-			<p>"Won't Let the World" Digital Single Cover Artwork</p>
-			</figure>
-		
-			<!--Nic Hessler 2023-->
-			<h2>nic hessler - "Anywhere but here" single (2023)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/4.jpg"> <img src="../images/band-art/4.jpg"></a>
-			<p>"Anywhere But Here" Digital Single Cover Artwork</p>
-			</figure>
+				<h1>Artists and Bands I've Worked for</h1>
 
-<!--SLIDER TEST-->
+				<div id="imageGallery">
 
-			<!--Slice II 2022-->
-			<div class="slider-section">
-		    <h1>Slice - II EP (2022)</h1>
-		    <div class="slider" id="slider1">
-		      <div class="slides">
-		        <img src="../images/band-art/9.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
-		        <img src="../images/band-art/8.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
-		      </div>
-    		<button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
-  		    <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
- 		   </div>
-	   		<div class="caption" id="caption-slider1"></div>
- 			</div>
-		
+					<h2>take kare - "won't let the world" single (2025)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/karen.jpg"> <img src="../images/band-art/karen.jpg"></a>
+						<p>Take Kare digital single cover</p>
+					</figure>
+					
+					<h2>nic hessler - "Anywhere but here" single (2023)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/4.jpg"> <img src="../images/band-art/4.jpg"></a>
+						<p>"Anywhere But Here" Digital Single Cover Artwork</p>
+					</figure>
+
+					<h2>slice - "II" EP (2022)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/9.jpg"> <img src="../images/band-art/9.jpg"></a>
+						<p>"II" EP Cover Artwork - formatted for CD/Vinyl</p>
+					</figure>
+
+					<figure>
+						<a href="../images/band-art/full-size/8.jpg"> <img src="../images/band-art/8.jpg"></a>
+						<p>"II" EP Back Cover Artwork - formatted for CD/Vinyl</p>
+					</figure>
 
 					<h2>slice - T-Shirt/merch Designs (2022)</h2>
 					<figure>
@@ -185,14 +180,13 @@
 					<figure>
 						<a href="../images/band-art/full-size/15.jpg"> <img src="../images/band-art/15.jpg"></a>
 						<p>Casette, pins, sticker, and patch design</p>
-					</figure>	
-		
-			<!--Smiling Beth 2020-->
-			<h2>smiling beth - "A Piano Walks Home Alone at Night" (2020)</h2>
-			<figure>						
-			<a href="../images/band-art/full-size/10.jpg"> <img src="../images/band-art/10.jpg"></a>
-			<p>"A Piano Walks Home Alone at Night" Album Cover Artwork</p>
-			</figure>
+					</figure>					
+
+					<h2>smiling beth - "A Piano Walks Home Alone at Night" (2020)</h2>
+					<figure>						
+						<a href="../images/band-art/full-size/10.jpg"> <img src="../images/band-art/10.jpg"></a>
+						<p>"A Piano Walks Home Alone at Night" Album Cover Artwork</p>
+					</figure>
 
 						<h2>shiro - "remain" album cover (2020)</h2>
 					<figure>						
@@ -214,45 +208,86 @@
 						<a href="../images/band-art/full-size/1.jpg"> <img src="../images/band-art/1.jpg"></a>
 						<p>"Danger Close" EP Cover Artwork</p>
 					</figure>
-		
-			<!--Sanguine Knight Tshirt 2019-->
-			<h2>sanguine knight - T-Shirt design (2019)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/5.jpg"> <img src="../images/band-art/5.jpg"></a>
-			<p>T-Shirt design for Sanguine Knight's 2019 West Coast Tour</p>
-			</figure>
 
-			<!--Shiro Oblivion 2019-->
-			<h2>shiro - "oblivion" EP Cover (2019)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/6.jpg"> <img src="../images/band-art/6.jpg"></a>
-			<p>"Oblivion" EP Cover Artwork</p>
-			</figure>
+					<h2>sanguine knight - T-Shirt design (2019)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/5.jpg"> <img src="../images/band-art/5.jpg"></a>
+						<p>T-Shirt design for Sanguine Knight's 2019 West Coast Tour</p>
+					</figure>
 
-			<!--Ellen Warkentine 2018-->
-			<h2>ellen warkentine - "Nonsense mouth" (2018)</h2>
-			<figure>						
-			<a href="../images/band-art/full-size/2.jpg"> <img src="../images/band-art/2.jpg"></a>
-			<p>"Nonsense Mouth" Album Cover Artwork (outtake)</p>
-			</figure>					
+					<h2>shiro - "oblivion" EP Cover (2019)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/6.jpg"> <img src="../images/band-art/6.jpg"></a>
+						<p>"Oblivion" EP Cover Artwork</p>
+					</figure>
 
-			<!-- Mind Monogram Slider -->
-			<div class="slider-section">
-		    <h1>mind monogram - "Ivory Hall" Album (2018)</h1>
-		    <div class="slider" id="slider2">
-		      <div class="slides">
-		        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
-		        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
-		      </div>
-    		<button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
-  		    <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
- 		   </div>
-	   		<div class="caption" id="caption-slider2"></div>
- 			</div>
+					<h2>ellen warkentine - "Nonsense mouth" (2018)</h2>
+					<figure>						
+						<a href="../images/band-art/full-size/2.jpg"> <img src="../images/band-art/2.jpg"></a>
+						<p>"Nonsense Mouth" Album Cover Artwork (outtake)</p>
+					</figure>					
 
-			</div>
+					<h2>mind monogram - "Ivory Hall" Album (2018)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/3.jpg"> <img src="../images/band-art/3.jpg"></a>
+						<p>"Ivory Hall" Album Cover Artwork</p>
+					</figure>
 
-		  <!-- Lightbox -->
+					<h2>slice - "Slice" Single Cover (2018)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/11.jpg"> <img src="../images/band-art/11.jpg"></a>
+						<p>"Slice" Single Cover Artwork</p>
+					</figure>
+
+				
+				</div>
+
+			</section>
+
+
+		</div>
+
+
+	</body>
+
+
+
+<body>
+
+  <!-- First Slider -->
+  <div class="slider-section">
+    <h1>Poster Slider</h1>
+    <div class="slider" id="slider1">
+      <div class="slides">
+        <img src="../images/band-art/7.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
+        <img src="../images/band-art/2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
+        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
+        <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider1"></div>
+  </div>
+
+  <!-- Second Slider -->
+  <div class="slider-section">
+    <h1>MIND MONOGRAM (2018) <br>
+		Album artwork for 'Ivory Hall'</h1>
+    <div class="slider" id="slider2">
+      <div class="slides">
+        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
+        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
+        <img src="art3.jpg" alt="Art 3" onclick="openLightbox('slider2', 2)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider2"></div>
+  </div>
+
+
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <button class="prev" onclick="moveLightbox(-1)">❮</button>
@@ -260,94 +295,88 @@
     <button class="next" onclick="moveLightbox(1)">❯</button>
   </div>
 
-		</section>
+  <script>
+    const slideIndices = {};
+    const captions = {
+      "slider1": [
+        "Poster 1 — Limited Edition Print",
+        "Poster 2 — Bold Graphic Design",
+        "Poster 3 — Minimalist Artwork",
+        "Poster 4 — Abstract Collection"
+      ],
+      "slider2": [
+        "'Ivory Hall' Album Cover Artwork",
+        "Printed T-shirt for Ivory Hall - NEEDS UPDATE"
+      ]
+    };
 
 
-		</div>
-	
-<!--SLIDER JAVA-->
-<script>
-  const slideIndices = {};
-  const captions = {
-    "slider1": [
-      "Slice II — Cover Artwork",
-      "Slice II — Alternate Design"
-    ],
-    "slider2": [
-      "Mind Monogram — Ivory Hall Artwork",
-      "Mind Monogram — Vinyl Back Cover"
-    ]
-  };
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    let currentSliderId = null;
+    let currentLightboxIndex = 0;
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  let currentSliderId = null;
-  let currentLightboxIndex = 0;
+    function moveSlide(sliderId, direction) {
+      const slider = document.getElementById(sliderId);
+      const slides = slider.querySelector('.slides');
+      const images = slides.querySelectorAll('img');
 
-  function moveSlide(sliderId, direction) {
-    const slider = document.getElementById(sliderId);
-    const slides = slider.querySelector('.slides');
-    const images = slides.querySelectorAll('img');
+      if (!(sliderId in slideIndices)) {
+        slideIndices[sliderId] = 0;
+      }
 
-    if (!(sliderId in slideIndices)) {
-      slideIndices[sliderId] = 0;
-    }
+      const maxIndex = images.length - 1;
+      slideIndices[sliderId] += direction;
 
-    const maxIndex = images.length - 1;
-    slideIndices[sliderId] += direction;
+      if (slideIndices[sliderId] < 0) {
+        slideIndices[sliderId] = maxIndex;
+      } else if (slideIndices[sliderId] > maxIndex) {
+        slideIndices[sliderId] = 0;
+      }
 
-    if (slideIndices[sliderId] < 0) {
-      slideIndices[sliderId] = maxIndex;
-    } else if (slideIndices[sliderId] > maxIndex) {
-      slideIndices[sliderId] = 0;
-    }
+      const offset = -slideIndices[sliderId] * 100;
+      slides.style.transform = `translateX(${offset}%)`;
 
-    const offset = -slideIndices[sliderId] * 100;
-    slides.style.transform = `translateX(${offset}%)`;
-
-    updateCaption(sliderId);
-  }
-
-  function updateCaption(sliderId) {
-    const captionEl = document.getElementById("caption-" + sliderId);
-    if (captions[sliderId]) {
-      captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
-    }
-  }
-
-  function openLightbox(sliderId, index) {
-    currentSliderId = sliderId;
-    currentLightboxIndex = index;
-    updateLightboxImage();
-    lightbox.style.display = "flex";
-  }
-
-  function closeLightbox() {
-    lightbox.style.display = "none";
-  }
-
-  function moveLightbox(direction) {
-    const slider = document.getElementById(currentSliderId);
-    const images = slider.querySelectorAll('.slides img');
-    currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
-    updateLightboxImage();
-  }
-
-  function updateLightboxImage() {
-    const slider = document.getElementById(currentSliderId);
-    const images = slider.querySelectorAll('.slides img');
-    lightboxImg.src = images[currentLightboxIndex].src;
-  }
-
-  // Initialize captions for all sliders
-  window.onload = function() {
-    Object.keys(captions).forEach(sliderId => {
-      slideIndices[sliderId] = 0; // start at first image
       updateCaption(sliderId);
-    });
-  }
-</script>
+    }
+	  
+    function updateCaption(sliderId) {
+      const captionEl = document.getElementById("caption-" + sliderId);
+      captionEl.classList.remove("show"); // fade out
+      setTimeout(() => {
+        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+        captionEl.classList.add("show"); // fade in
+      }, 200);
+    }
 
+    function openLightbox(sliderId, index) {
+      currentSliderId = sliderId;
+      currentLightboxIndex = index;
+      updateLightboxImage();
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+    }
+
+    function moveLightbox(direction) {
+      const slider = document.getElementById(currentSliderId);
+      const images = slider.querySelectorAll('.slides img');
+      currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
+      updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+      const slider = document.getElementById(currentSliderId);
+      const images = slider.querySelectorAll('.slides img');
+      lightboxImg.src = images[currentLightboxIndex].src;
+    }
+
+    // Initialize first captions
+    updateCaption("slider1");
+    updateCaption("slider2");
+  </script>
 
 </body>
 </html>

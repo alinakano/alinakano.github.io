@@ -13,7 +13,6 @@ allie does it on her own in 2025.
 		  <style>
 
     .slider-section {
-      margin-left: 20px
       max-width: 600px;
 	  margin-bottom: 50px; /* space between sliders */
     }
@@ -147,39 +146,6 @@ allie does it on her own in 2025.
 				<div id="imageGallery">
 
 
-					 <!-- First Slider -->
-  <div class="slider-section">
-    <h1>Poster Slider</h1>
-    <div class="slider" id="slider1">
-      <div class="slides">
-        <img src="../images/band-art/7.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
-        <img src="../images/band-art/2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
-        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
-        <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
-      </div>
-      <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
-      <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
-    </div>
-    <div class="caption" id="caption-slider1"></div>
-  </div>
-
-  <!-- Second Slider -->
-  <div class="slider-section">
-    <h1>MIND MONOGRAM (2018) <br>
-		Album artwork for 'Ivory Hall'</h1>
-    <div class="slider" id="slider2">
-      <div class="slides">
-        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
-        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
-        <img src="art3.jpg" alt="Art 3" onclick="openLightbox('slider2', 2)">
-      </div>
-      <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
-      <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
-    </div>
-    <div class="caption" id="caption-slider2"></div>
-  </div>
-
-
 					<h2>take kare - "won't let the world" single (2025)</h2>
 					<figure>
 						<a href="../images/band-art/full-size/karen.jpg"> <img src="../images/band-art/karen.jpg"></a>
@@ -218,6 +184,21 @@ allie does it on her own in 2025.
 						<a href="../images/band-art/full-size/10.jpg"> <img src="../images/band-art/10.jpg"></a>
 						<p>"A Piano Walks Home Alone at Night" Album Cover Artwork</p>
 					</figure>
+
+					  <!-- Second Slider -->
+  <div class="slider-section">
+    <h2>SHIRO - "REMAIN" ALBUM (2020)</h2>
+    <div class="slider" id="slider2">
+      <div class="slides">
+        <img src="../images/band-art/7.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
+        <img src="../images/band-art/13.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
+        <img src="../images/band-art/14.jpg" alt="Art 3" onclick="openLightbox('slider2', 2)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider2"></div>
+  </div>
 
 						<h2>shiro - "remain" album cover (2020)</h2>
 					<figure>						
@@ -264,6 +245,21 @@ allie does it on her own in 2025.
 						<p>"Ivory Hall" Album Cover Artwork</p>
 					</figure>
 
+ <!-- SLICE 2018 - First Slider -->
+  <div class="slider-section">
+    <h2>SLICE - "SLICE" SINGLE COVER AND MERCH (2018)</h2>
+    <div class="slider" id="slider1">
+      <div class="slides">
+        <img src="../images/band-art/11.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
+        <img src="../images/band-art/2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
+        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
+        <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider1"></div>
+  </div>
 					<h2>slice - "Slice" Single Cover (2018)</h2>
 					<figure>
 						<a href="../images/band-art/full-size/11.jpg"> <img src="../images/band-art/11.jpg"></a>
@@ -272,20 +268,10 @@ allie does it on her own in 2025.
 
 				
 				</div>
-
 			</section>
-
-
 		</div>
-
-
 	</body>
-
-
-
 <body>
-
- 
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -299,14 +285,15 @@ allie does it on her own in 2025.
     const slideIndices = {};
     const captions = {
       "slider1": [
-        "Poster 1 — Limited Edition Print",
+        "'Slice' Single Cover Artwork",
         "Poster 2 — Bold Graphic Design",
         "Poster 3 — Minimalist Artwork",
         "Poster 4 — Abstract Collection"
       ],
       "slider2": [
-        "'Ivory Hall' Album Cover Artwork",
-        "Printed T-shirt for Ivory Hall - NEEDS UPDATE"
+        "'Remain' Album Cover Artwork",
+        "'Remain' Album Cover formatted for J-card and casette",
+		""
       ]
     };
 

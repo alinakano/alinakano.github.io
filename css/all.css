@@ -13,6 +13,12 @@ h1, h2, h3 {
 	font-family: roboto;
 }
 
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=roboto:wght@300;400&display=swap');
+
+body {
+    font-family: 'roboto', sans-serif;
+}
 /*bg color for website*/
 html, body {
   background-color: #fff5f5;

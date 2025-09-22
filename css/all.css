@@ -15,7 +15,7 @@ h1, h2, h3 {
 
 /*bg color for website*/
 html, body {
-  background-color: #A8E6F7;
+  background-color: #fff5f5;
   margin: 0;
   padding: 0;
 }
@@ -35,23 +35,23 @@ body {
 
 /* All things in the Header container */
 header {
-	background-color: #A8E6F7;
+	background-color: #fff5f5;
 	padding-top: 50px;
-	font-family: Jacquard12-Regular;
 }
 
 /* The main home link at the top "Alina Kano" */
 #homeLink {
+	position: fixed;
 	text-decoration: none;
 	text-align: center;
 	padding-left: 45px;
 	font-family: roboto;
 	letter-spacing: -1px;
 	font-size: 30px;
-	color: #000000;
+	color: #303030;
 }
 #homeLink:visited {
-	color: #000000;
+	color: #fff5f5;
 }
 
 /* The body of the page including the main links on the left and the gallery, etc (everything under the header) */
@@ -71,7 +71,7 @@ header {
 #mainLinks a {
 	display: block;
 	line-height: 2;
-	text-decoration: none;
+	text-align: right;
 	color: black;
 	text-transform: uppercase;
 	letter-spacing: 0px;
@@ -79,15 +79,15 @@ header {
 	font-style: bold;
 }
 #mainLinks a:visited {
-	color: black;
+	color: 303030;
 }
 #mainLinks a:hover {
-  color: #f54937;
+  color: #757575;
 }
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: #A8E6F7;
+	background-color: #fff5f5;
 	padding-left: 170px;
 	padding-top: 10px;
 }
@@ -109,7 +109,6 @@ h2 {
 
 /* The container of images of your works */
 #imageGallery {
-
 }
 
 #imageGallery figure {
@@ -125,14 +124,12 @@ h2 {
 	margin: 0px;
 }
 
-
 /* The images of works */
 #imageGallery img {
 	width: 95%;
 	max-width: 600px;
 	height: auto;
 }
-
 
 /* Only applies to the posters page (body has .gallery-page) */
 .gallery-page .gallery {
@@ -160,14 +157,6 @@ h2 {
   .gallery-page .gallery {
     grid-template-columns: 1fr;
   }
-}
-
-/*font -does this work? */
-@font-face {
-  font-family: "jacquard12-regular";
-  src: url(".../fonts/jacquard12-regular.woff") format("woff"),
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* Hamburger toggle button (hidden on desktop) */

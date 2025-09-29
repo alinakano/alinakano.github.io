@@ -1,5 +1,4 @@
 <!doctype html>
-
 <!--allie does it on her own in 2025.-->
 
 <html>	
@@ -12,38 +11,110 @@
 	<style>
 
 /*TESTING OLD SLIDER*/
-.slider {
-  position: relative;
-  max-width: 600px;
-  margin: 0px auto;
-  overflow: hidden;
-  border: 0px solid #ccc;
-  border-radius: 10px;
-}
+    body {
+      background: #f9f9f9;
+      padding: 0px;
+      margin: 0;
+    }
 
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
+    .slider-section {
+      margin-left: 20px; /* space for sidebar */
+      max-width: 600px;
+    }
 
-.slides img {
-  width: 100%;
-  flex-shrink: 0;
-}
+    .slider-section h1 {
+      margin-bottom: 10px;
+      padding-left: 0px;
+    }
 
-.slider button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
+    .slider {
+      position: flex;
+      max-width: 600px;
+      overflow: hidden;
+		  margin: 40px auto;
+      border: 0px;
+      background: white;
+    }
 
-.slider .prev { left: 10px; }
-.slider .next { right: 10px; }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .slider .prev { left: 10px; }
+    .slider .next { right: 10px; }
+
+    /* Caption box */
+    .caption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 16px;
+      color: #333;
+      min-height: 24px; /* keeps height stable */
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .lightbox button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      border: none;
+      font-size: 36px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      color: black;
+    }
+
+    .lightbox .prev { left: 30px; }
+    .lightbox .next { right: 30px; }
   </style>
 	</head>
 
@@ -89,6 +160,8 @@
 			<p>"Anywhere But Here" Digital Single Cover Artwork</p>
 			</figure>
 
+<!--SLIDER TEST-->
+
 			<!--Slice II 2022-->
 			<div class="slider-section">
 		    <h1>Slice - II EP (2022)</h1>
@@ -102,18 +175,6 @@
  		   </div>
 	   		<div class="caption" id="caption-slider1"></div>
  			</div>
-
-<!--WORKING SLIDER TEST-->
-<!-- Slider 1 -->
-<div class="slider" id="slider1">
-  <div class="slides">
-    <img src="poster1.jpg" alt="Poster 1">
-    <img src="poster2.jpg" alt="Poster 2">
-    <img src="poster3.jpg" alt="Poster 3">
-  </div>
-  <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
-  <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
-</div>
 		
 
 					<h2>slice - T-Shirt/merch Designs (2022)</h2>
@@ -191,13 +252,7 @@
 
 			</div>
 
-		</section>
-
-
-		</div>
-
-
-  <!-- Lightbox -->
+		  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <button class="prev" onclick="moveLightbox(-1)">❮</button>
@@ -205,51 +260,40 @@
     <button class="next" onclick="moveLightbox(1)">❯</button>
   </div>
 
-  <script>
-    // Initialize slide indices for each slider
-    const slideIndices = {
-      "slider1": 0,
-      "slider2": 0
-    };
-    
+		</section>
+
+
+		</div>
+	
+<!--SLIDER JAVA-->
+	<script>
+    const slideIndices = {};
     const captions = {
       "slider1": [
-        ""II" EP Cover Artwork - formatted for CD/Vinyl",
-        ""II" EP Back Cover Artwork - formatted for CD/Vinyl"
-      ],
-      "slider2": [
-        "'Ivory Hall' Album Cover Artwork",
-        "'Slice' Single Cover Artwork"
+        "Poster 1 — Limited Edition Print",
+        "Poster 2 — Bold Graphic Design",
+        "Poster 3 — Minimalist Artwork",
+        "Poster 4 — Abstract Collection"
       ]
     };
 
-    // Lightbox variables
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
     let currentSliderId = null;
     let currentLightboxIndex = 0;
 
     function moveSlide(sliderId, direction) {
-      console.log('Moving slide for:', sliderId, 'direction:', direction); // Debug log
-      
       const slider = document.getElementById(sliderId);
-      if (!slider) {
-        console.error('Slider not found:', sliderId);
-        return;
-      }
-      
       const slides = slider.querySelector('.slides');
       const images = slides.querySelectorAll('img');
-      
-      console.log('Found images:', images.length); // Debug log
-      
-      if (images.length <= 1) {
-        console.log('Not enough images to slide');
-        return;
+
+      if (!(sliderId in slideIndices)) {
+        slideIndices[sliderId] = 0;
       }
 
       const maxIndex = images.length - 1;
       slideIndices[sliderId] += direction;
 
-      // Wrap around logic
       if (slideIndices[sliderId] < 0) {
         slideIndices[sliderId] = maxIndex;
       } else if (slideIndices[sliderId] > maxIndex) {
@@ -257,23 +301,17 @@
       }
 
       const offset = -slideIndices[sliderId] * 100;
-      console.log('Setting transform to:', offset + '%'); // Debug log
       slides.style.transform = `translateX(${offset}%)`;
 
       updateCaption(sliderId);
     }
-	  
+
     function updateCaption(sliderId) {
       const captionEl = document.getElementById("caption-" + sliderId);
-      if (captionEl && captions[sliderId] && slideIndices[sliderId] < captions[sliderId].length) {
-        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
-      }
+      captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
     }
 
     function openLightbox(sliderId, index) {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      
       currentSliderId = sliderId;
       currentLightboxIndex = index;
       updateLightboxImage();
@@ -281,7 +319,6 @@
     }
 
     function closeLightbox() {
-      const lightbox = document.getElementById("lightbox");
       lightbox.style.display = "none";
     }
 
@@ -293,65 +330,14 @@
     }
 
     function updateLightboxImage() {
-      const lightboxImg = document.getElementById("lightbox-img");
       const slider = document.getElementById(currentSliderId);
       const images = slider.querySelectorAll('.slides img');
-      if (images[currentLightboxIndex]) {
-        lightboxImg.src = images[currentLightboxIndex].src;
-      }
+      lightboxImg.src = images[currentLightboxIndex].src;
     }
 
-    // Initialize when page loads
-    window.addEventListener('load', function() {
-      console.log('Page loaded, initializing sliders'); // Debug log
-      
-      // Set initial captions
-      updateCaption("slider1");
-      updateCaption("slider2");
-      
-      // Test if sliders exist
-      const slider1 = document.getElementById("slider1");
-      const slider2 = document.getElementById("slider2");
-      
-      console.log('Slider1 found:', !!slider1);
-      console.log('Slider2 found:', !!slider2);
-      
-      if (slider1) {
-        const images1 = slider1.querySelectorAll('.slides img');
-        console.log('Slider1 images:', images1.length);
-      }
-      
-      if (slider2) {
-        const images2 = slider2.querySelectorAll('.slides img');
-        console.log('Slider2 images:', images2.length);
-      }
-    });
+    // Initialize first caption
+    updateCaption("slider1");
   </script>
-
-
-<!--SLIDER TEST-->
-	<script>
-  // Track the current slide index for each slider
-  const slideIndices = {};
-
-  function moveSlide(sliderId, direction) {
-    const slider = document.getElementById(sliderId);
-    const slides = slider.querySelector('.slides');
-    const images = slides.querySelectorAll('img');
-
-    // Initialize index if not set
-    if (!(sliderId in slideIndices)) {
-      slideIndices[sliderId] = 0;
-    }
-
-    // Update index
-    slideIndices[sliderId] = (slideIndices[sliderId] + direction + images.length) % images.length;
-
-    // Shift slides
-    const offset = -slideIndices[sliderId] * 100;
-    slides.style.transform = `translateX(${offset}%)`;
-  }
-</script>
 
 </body>
 </html>

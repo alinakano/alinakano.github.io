@@ -1,25 +1,28 @@
 	<!doctype html>
 
-<!--allie does it on her own in 2025.-->
+<!--
+allie does it on her own in 2025.
+-->
 
-<html>	
+<html>
+	
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "../css/band-art.css"/>
 		<title>ALINA KANO</title>
-	
-	<style>
+		  <style>
 
     .slider-section {
-      margin-left: 40px; /* space for sidebar */
+      margin-left: 63px; /* space for sidebar */
       max-width: 600px;
 	  margin-bottom: 50px; /* space between sliders */
     }
 
-    .slider-section h2 {
-      margin-bottom: 5px;
-	  text-align: left;
-      padding-left: 0px;
+    .slider-section h1 {
+      margin-bottom: 10px;
+	  text-align: center;
+      font-size: 1.2em;
+      padding-left: 10px;
     }
 
     .slider {
@@ -55,20 +58,18 @@
     .slider .prev { left: 10px; }
     .slider .next { right: 10px; }
 
-  	/* Captions */
-  	.caption {
-    	text-align: center;
-		text-transform: italic;
-   		margin-top: 8px;
-    	font-size: 10px;
-    	color: #333;
-    	min-height: 20px;
-    	opacity: 1;
-		
+  /* Captions */
+  .caption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    min-height: 20px;
+    opacity: 1;
     /* transition: opacity 0.5s ease-in-out; */
-		display: block;  /* ensures it's visible */
-  	}
-  	/* .caption.fade-out { opacity: 0; } */
+	display: block;  /* ensures it's visible */
+  }
+  /* .caption.fade-out { opacity: 0; } */
 
     /* Lightbox */
     .lightbox {
@@ -114,30 +115,23 @@
 
     .lightbox .prev { left: 30px; }
     .lightbox .next { right: 30px; }
-
- /* Responsive tweak: stack sidebar on small screens */
-    @media (max-width: 768px) {
-      #pageBody {
-        flex-direction: column;
-      }
-      #mainLinks {
-        width: 100%;
-        text-align: center;
   </style>
 	</head>
 
-<body>
+	<body>
 
 
 		<!--  The header of the home link -->
 		<header>
-		<a id="homeLink" href="../index.html">alina kano</a>
+			<a id="homeLink" href="../index.html">alina kano</a>
 		</header>
+
 
 		<!-- Page Content -->
 		<div id="pageBody">
 
-		<!-- Main Links -->
+
+			<!-- Main Links -->
 			<div id="mainLinks">
         		<a href="../index.html">home</a>
 				<a href="../selected-work/index.html">drawings</a>
@@ -147,35 +141,27 @@
 				<a href="../contact/index.html">contact</a>
 			</div>
 
-			
 
-<!--WORK CONTENT-->
+<!--  Work Content -->
 	<section class = "mainContent">
-	<h1>COMMISSIONS FOR ARTISTS AND BANDS</h1>
+
+	<h1>Artists and Bands I've Worked for</h1>
+
 	<div id="imageGallery">
 
-		
-			<!--Take Kare 2025-->
 			<h2>take kare - "won't let the world" single (2025)</h2>
 			<figure>
-			<a href="../images/band-art/full-size/karen.jpg"> <img src="../images/band-art/karen.jpg"></a>
-			<p>"Won't Let the World" Digital Single Cover Artwork</p>
-			</figure>
-		
-			<!--Nic Hessler 2023-->
-			<h2>nic hessler - "Anywhere but here" single (2023)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/4.jpg"> <img src="../images/band-art/4.jpg"></a>
-			<p>"Anywhere But Here" Digital Single Cover Artwork</p>
+				<a href="../images/band-art/full-size/karen.jpg"> <img src="../images/band-art/karen.jpg"></a>
+				<p>Take Kare digital single cover</p>
 			</figure>
 
-			<!--Slice II 2022-->
-			<div class="slider-section">
-		    <h1>Slice - II EP (2022)</h1>
+			<!-- First Slider -->
+			  <div class="slider-section">
+		    <h1>Poster Slider</h1>
 		    <div class="slider" id="slider1">
 		      <div class="slides">
-		        <img src="../images/band-art/9.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
-		        <img src="../images/band-art/8.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
+		        <img src="../images/band-art/7.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
+		        <img src="../images/band-art/2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
 		        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
      			<img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
 		      </div>
@@ -185,6 +171,22 @@
 	   		<div class="caption" id="caption-slider1"></div>
  			</div>
 					
+					<h2>nic hessler - "Anywhere but here" single (2023)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/4.jpg"> <img src="../images/band-art/4.jpg"></a>
+						<p>"Anywhere But Here" Digital Single Cover Artwork</p>
+					</figure>
+
+					<h2>slice - "II" EP (2022)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/9.jpg"> <img src="../images/band-art/9.jpg"></a>
+						<p>"II" EP Cover Artwork - formatted for CD/Vinyl</p>
+					</figure>
+
+					<figure>
+						<a href="../images/band-art/full-size/8.jpg"> <img src="../images/band-art/8.jpg"></a>
+						<p>"II" EP Back Cover Artwork - formatted for CD/Vinyl</p>
+					</figure>
 
 					<h2>slice - T-Shirt/merch Designs (2022)</h2>
 					<figure>
@@ -194,14 +196,13 @@
 					<figure>
 						<a href="../images/band-art/full-size/15.jpg"> <img src="../images/band-art/15.jpg"></a>
 						<p>Casette, pins, sticker, and patch design</p>
-					</figure>	
-		
-			<!--Smiling Beth 2020-->
-			<h2>smiling beth - "A Piano Walks Home Alone at Night" (2020)</h2>
-			<figure>						
-			<a href="../images/band-art/full-size/10.jpg"> <img src="../images/band-art/10.jpg"></a>
-			<p>"A Piano Walks Home Alone at Night" Album Cover Artwork</p>
-			</figure>
+					</figure>					
+
+					<h2>smiling beth - "A Piano Walks Home Alone at Night" (2020)</h2>
+					<figure>						
+						<a href="../images/band-art/full-size/10.jpg"> <img src="../images/band-art/10.jpg"></a>
+						<p>"A Piano Walks Home Alone at Night" Album Cover Artwork</p>
+					</figure>
 
 						<h2>shiro - "remain" album cover (2020)</h2>
 					<figure>						
@@ -223,27 +224,24 @@
 						<a href="../images/band-art/full-size/1.jpg"> <img src="../images/band-art/1.jpg"></a>
 						<p>"Danger Close" EP Cover Artwork</p>
 					</figure>
-		
-			<!--Sanguine Knight Tshirt 2019-->
-			<h2>sanguine knight - T-Shirt design (2019)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/5.jpg"> <img src="../images/band-art/5.jpg"></a>
-			<p>T-Shirt design for Sanguine Knight's 2019 West Coast Tour</p>
-			</figure>
 
-			<!--Shiro Oblivion 2019-->
-			<h2>shiro - "oblivion" EP Cover (2019)</h2>
-			<figure>
-			<a href="../images/band-art/full-size/6.jpg"> <img src="../images/band-art/6.jpg"></a>
-			<p>"Oblivion" EP Cover Artwork</p>
-			</figure>
+					<h2>sanguine knight - T-Shirt design (2019)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/5.jpg"> <img src="../images/band-art/5.jpg"></a>
+						<p>T-Shirt design for Sanguine Knight's 2019 West Coast Tour</p>
+					</figure>
 
-			<!--Ellen Warkentine 2018-->
-			<h2>ellen warkentine - "Nonsense mouth" (2018)</h2>
-			<figure>						
-			<a href="../images/band-art/full-size/2.jpg"> <img src="../images/band-art/2.jpg"></a>
-			<p>"Nonsense Mouth" Album Cover Artwork (outtake)</p>
-			</figure>					
+					<h2>shiro - "oblivion" EP Cover (2019)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/6.jpg"> <img src="../images/band-art/6.jpg"></a>
+						<p>"Oblivion" EP Cover Artwork</p>
+					</figure>
+
+					<h2>ellen warkentine - "Nonsense mouth" (2018)</h2>
+					<figure>						
+						<a href="../images/band-art/full-size/2.jpg"> <img src="../images/band-art/2.jpg"></a>
+						<p>"Nonsense Mouth" Album Cover Artwork (outtake)</p>
+					</figure>					
 
 					<h2>mind monogram - "Ivory Hall" Album (2018)</h2>
 					<figure>
@@ -273,6 +271,35 @@
 <body>
 
 
+  <!-- First Slider -->
+  <div class="slider-section">
+    <h1>Poster Slider</h1>
+    <div class="slider" id="slider1">
+      <div class="slides">
+        <img src="../images/band-art/7.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
+        <img src="../images/band-art/2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
+        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
+        <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider1"></div>
+  </div>
+
+<div id="imageGallery">
+	<h2>take kare - "won't let the world" single (2025)</h2>
+		<figure>
+		<a href="../images/band-art/full-size/karen.jpg"> <img src="../images/band-art/karen.jpg"></a>
+		<p>Take Kare digital single cover</p>
+		</figure>
+					
+	<h2>nic hessler - "Anywhere but here" single (2023)</h2>
+		<figure>
+		<a href="../images/band-art/full-size/4.jpg"> <img src="../images/band-art/4.jpg"></a>
+		<p>"Anywhere But Here" Digital Single Cover Artwork</p>
+		</figure>
+</div>
 
   <!-- Second Slider -->
   <div class="slider-section">
@@ -302,13 +329,11 @@
   <script>
     const slideIndices = {};
     const captions = {
-
-	/*SLICE II*/
       "slider1": [
-        ""II" EP Cover Artwork - formatted for CD/Vinyl",
-        ""II" EP Back Cover Artwork - formatted for CD/Vinyl",
-        "Poster 3",
-        "Poster 4"
+        "Poster 1 — Limited Edition Print",
+        "Poster 2 — Bold Graphic Design",
+        "Poster 3 — Minimalist Artwork",
+        "Poster 4 — Abstract Collection"
       ],
       "slider2": [
         "'Ivory Hall' Album Cover Artwork",

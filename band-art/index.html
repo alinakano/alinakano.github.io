@@ -1,4 +1,5 @@
-<!doctype html>
+	<!doctype html>
+
 <!--allie does it on her own in 2025.-->
 
 <html>	
@@ -6,34 +7,25 @@
 		<link rel = "stylesheet" type = "text/css" href = "../css/all.css"/>
 		<link rel = "stylesheet" type = "text/css" href = "../css/band-art.css"/>
 		<title>ALINA KANO</title>
-		<!--favicon-->
-		<link rel="icon" type="image/png" href="../images/favicon.png">
+	
 	<style>
 
-/*TESTING OLD SLIDER*/
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      padding: 40px;
-      margin: 0;
-    }
-
     .slider-section {
-      margin-left: 200px; /* space for sidebar */
+      margin-left: 40px; /* space for sidebar */
       max-width: 600px;
+	  margin-bottom: 50px; /* space between sliders */
     }
 
-    .slider-section h1 {
-      margin-bottom: 10px;
-      padding-left: 10px;
+    .slider-section h2 {
+      margin-bottom: 5px;
+	  text-align: left;
+      padding-left: 0px;
     }
 
     .slider {
       position: relative;
       max-width: 600px;
       overflow: hidden;
-      border: 2px solid #ccc;
-      border-radius: 10px;
       background: white;
     }
 
@@ -63,14 +55,20 @@
     .slider .prev { left: 10px; }
     .slider .next { right: 10px; }
 
-    /* Caption box */
-    .caption {
-      text-align: center;
-      margin-top: 8px;
-      font-size: 16px;
-      color: #333;
-      min-height: 24px; /* keeps height stable */
-    }
+  	/* Captions */
+  	.caption {
+    	text-align: center;
+		text-transform: italic;
+   		margin-top: 8px;
+    	font-size: 10px;
+    	color: #333;
+    	min-height: 20px;
+    	opacity: 1;
+		
+    /* transition: opacity 0.5s ease-in-out; */
+		display: block;  /* ensures it's visible */
+  	}
+  	/* .caption.fade-out { opacity: 0; } */
 
     /* Lightbox */
     .lightbox {
@@ -116,10 +114,20 @@
 
     .lightbox .prev { left: 30px; }
     .lightbox .next { right: 30px; }
+
+ /* Responsive tweak: stack sidebar on small screens */
+    @media (max-width: 768px) {
+      #pageBody {
+        flex-direction: column;
+      }
+      #mainLinks {
+        width: 100%;
+        text-align: center;
   </style>
 	</head>
 
 <body>
+
 
 		<!--  The header of the home link -->
 		<header>
@@ -168,31 +176,15 @@
 		      <div class="slides">
 		        <img src="../images/band-art/9.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
 		        <img src="../images/band-art/8.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
+		        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
+     			<img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
 		      </div>
     		<button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
   		    <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
  		   </div>
 	   		<div class="caption" id="caption-slider1"></div>
  			</div>
-
-<!--WORKING SLIDER TEST-->
-<!-- Slider 1 -->
-
-  <div class="slider-section">
-    <h1>Poster Slider</h1>
-    <div class="slider" id="slider1">
-      <div class="slides">
-        <img src="poster1.jpg" alt="Poster 1" onclick="openLightbox('slider1', 0)">
-        <img src="poster2.jpg" alt="Poster 2" onclick="openLightbox('slider1', 1)">
-        <img src="poster3.jpg" alt="Poster 3" onclick="openLightbox('slider1', 2)">
-        <img src="poster4.jpg" alt="Poster 4" onclick="openLightbox('slider1', 3)">
-      </div>
-      <button class="prev" onclick="moveSlide('slider1', -1)">❮</button>
-      <button class="next" onclick="moveSlide('slider1', 1)">❯</button>
-    </div>
-    <div class="caption" id="caption-slider1"></div>
-  </div>
-		
+					
 
 					<h2>slice - T-Shirt/merch Designs (2022)</h2>
 					<figure>
@@ -253,23 +245,53 @@
 			<p>"Nonsense Mouth" Album Cover Artwork (outtake)</p>
 			</figure>					
 
-			<!-- Mind Monogram Slider -->
-			<div class="slider-section">
-		    <h1>mind monogram - "Ivory Hall" Album (2018)</h1>
-		    <div class="slider" id="slider2">
-		      <div class="slides">
-		        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
-		        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
-		      </div>
-    		<button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
-  		    <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
- 		   </div>
-	   		<div class="caption" id="caption-slider2"></div>
- 			</div>
+					<h2>mind monogram - "Ivory Hall" Album (2018)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/3.jpg"> <img src="../images/band-art/3.jpg"></a>
+						<p>"Ivory Hall" Album Cover Artwork</p>
+					</figure>
 
-			</div>
+					<h2>slice - "Slice" Single Cover (2018)</h2>
+					<figure>
+						<a href="../images/band-art/full-size/11.jpg"> <img src="../images/band-art/11.jpg"></a>
+						<p>"Slice" Single Cover Artwork</p>
+					</figure>
 
-		  <!-- Lightbox -->
+				
+				</div>
+
+			</section>
+
+
+		</div>
+
+
+	</body>
+
+
+
+<body>
+
+
+
+  <!-- Second Slider -->
+  <div class="slider-section">
+    <h1>MIND MONOGRAM (2018) <br>
+		Album artwork for 'Ivory Hall'</h1>
+    <div class="slider" id="slider2">
+      <div class="slides">
+        <img src="../images/band-art/3.jpg" alt="Art 1" onclick="openLightbox('slider2', 0)">
+        <img src="../images/band-art/11.jpg" alt="Art 2" onclick="openLightbox('slider2', 1)">
+        <img src="art3.jpg" alt="Art 3" onclick="openLightbox('slider2', 2)">
+      </div>
+      <button class="prev" onclick="moveSlide('slider2', -1)">❮</button>
+      <button class="next" onclick="moveSlide('slider2', 1)">❯</button>
+    </div>
+    <div class="caption" id="caption-slider2"></div>
+  </div>
+
+
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <button class="prev" onclick="moveLightbox(-1)">❮</button>
@@ -277,147 +299,23 @@
     <button class="next" onclick="moveLightbox(1)">❯</button>
   </div>
 
-		</section>
-
-
-		</div>
-	
-<!--
   <script>
-    // Initialize slide indices for each slider
-    const slideIndices = {
-      "slider1": 0,
-      "slider2": 0
-    };
-    
+    const slideIndices = {};
     const captions = {
+
+	/*SLICE II*/
       "slider1": [
         ""II" EP Cover Artwork - formatted for CD/Vinyl",
-        ""II" EP Back Cover Artwork - formatted for CD/Vinyl"
+        ""II" EP Back Cover Artwork - formatted for CD/Vinyl",
+        "Poster 3",
+        "Poster 4"
       ],
       "slider2": [
         "'Ivory Hall' Album Cover Artwork",
-        "'Slice' Single Cover Artwork"
+        "Printed T-shirt for Ivory Hall - NEEDS UPDATE"
       ]
     };
 
-    // Lightbox variables
-    let currentSliderId = null;
-    let currentLightboxIndex = 0;
-
-    function moveSlide(sliderId, direction) {
-      console.log('Moving slide for:', sliderId, 'direction:', direction); // Debug log
-      
-      const slider = document.getElementById(sliderId);
-      if (!slider) {
-        console.error('Slider not found:', sliderId);
-        return;
-      }
-      
-      const slides = slider.querySelector('.slides');
-      const images = slides.querySelectorAll('img');
-      
-      console.log('Found images:', images.length); // Debug log
-      
-      if (images.length <= 1) {
-        console.log('Not enough images to slide');
-        return;
-      }
-
-      const maxIndex = images.length - 1;
-      slideIndices[sliderId] += direction;
-
-      // Wrap around logic
-      if (slideIndices[sliderId] < 0) {
-        slideIndices[sliderId] = maxIndex;
-      } else if (slideIndices[sliderId] > maxIndex) {
-        slideIndices[sliderId] = 0;
-      }
-
-      const offset = -slideIndices[sliderId] * 100;
-      console.log('Setting transform to:', offset + '%'); // Debug log
-      slides.style.transform = `translateX(${offset}%)`;
-
-      updateCaption(sliderId);
-    }
-	  
-    function updateCaption(sliderId) {
-      const captionEl = document.getElementById("caption-" + sliderId);
-      if (captionEl && captions[sliderId] && slideIndices[sliderId] < captions[sliderId].length) {
-        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
-      }
-    }
-
-    function openLightbox(sliderId, index) {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      
-      currentSliderId = sliderId;
-      currentLightboxIndex = index;
-      updateLightboxImage();
-      lightbox.style.display = "flex";
-    }
-
-    function closeLightbox() {
-      const lightbox = document.getElementById("lightbox");
-      lightbox.style.display = "none";
-    }
-
-    function moveLightbox(direction) {
-      const slider = document.getElementById(currentSliderId);
-      const images = slider.querySelectorAll('.slides img');
-      currentLightboxIndex = (currentLightboxIndex + direction + images.length) % images.length;
-      updateLightboxImage();
-    }
-
-    function updateLightboxImage() {
-      const lightboxImg = document.getElementById("lightbox-img");
-      const slider = document.getElementById(currentSliderId);
-      const images = slider.querySelectorAll('.slides img');
-      if (images[currentLightboxIndex]) {
-        lightboxImg.src = images[currentLightboxIndex].src;
-      }
-    }
-
-    // Initialize when page loads
-    window.addEventListener('load', function() {
-      console.log('Page loaded, initializing sliders'); // Debug log
-      
-      // Set initial captions
-      updateCaption("slider1");
-      updateCaption("slider2");
-      
-      // Test if sliders exist
-      const slider1 = document.getElementById("slider1");
-      const slider2 = document.getElementById("slider2");
-      
-      console.log('Slider1 found:', !!slider1);
-      console.log('Slider2 found:', !!slider2);
-      
-      if (slider1) {
-        const images1 = slider1.querySelectorAll('.slides img');
-        console.log('Slider1 images:', images1.length);
-      }
-      
-      if (slider2) {
-        const images2 = slider2.querySelectorAll('.slides img');
-        console.log('Slider2 images:', images2.length);
-      }
-    });
-  </script>
-
--->
-<!--SLIDER TEST-->
-	<script>
-    const slideIndices = {};
-    const captions = {
-      "slider1": [
-        "Poster 1 — Limited Edition Print",
-        "Poster 2 — Bold Graphic Design",
-        "Poster 3 — Minimalist Artwork",
-        "Poster 4 — Abstract Collection"
-      ]
-    };
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -447,10 +345,14 @@
 
       updateCaption(sliderId);
     }
-
+	  
     function updateCaption(sliderId) {
       const captionEl = document.getElementById("caption-" + sliderId);
-      captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+      captionEl.classList.remove("show"); // fade out
+      setTimeout(() => {
+        captionEl.textContent = captions[sliderId][slideIndices[sliderId]];
+        captionEl.classList.add("show"); // fade in
+      }, 200);
     }
 
     function openLightbox(sliderId, index) {
@@ -477,8 +379,9 @@
       lightboxImg.src = images[currentLightboxIndex].src;
     }
 
-    // Initialize first caption
+    // Initialize first captions
     updateCaption("slider1");
+    updateCaption("slider2");
   </script>
 
 </body>

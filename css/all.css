@@ -136,8 +136,18 @@ h2 {
 
 
 /* The images of works */
+/*
 #imageGallery img {
 	width: 600px;
+	height: auto;
+}
+*/
+
+/* The images of works */
+#imageGallery img {
+	width: 90%;
+	width: 95%;
+	max-width: 600px;
 	height: auto;
 }
 

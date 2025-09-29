@@ -1,27 +1,11 @@
-
-/*font*/
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
-h1, h2, h3 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
 /* Everything */
 * {
-	font-family: roboto;
+	font-family: courier;
 }
 
-/*font*/
-@import url('https://fonts.googleapis.com/css2?family=roboto:wght@300;400&display=swap');
-
-body {
-    font-family: 'roboto', sans-serif;
-}
 /*bg color for website*/
 html, body {
-  background-color: #fff5f5;
+  background-color: #A8E6F7;
   margin: 0;
   padding: 0;
 }
@@ -39,29 +23,25 @@ body {
   }
 }
 
-/* All things in the Header container - trying one below.. */
-/*header {
-	background-color: #fff5f5;
-	padding-top: 50px;
-} */
-
+/* All things in the Header container */
 header {
-    background-color: #fff5f5;
-    padding-top: 50px;
+	background-color: #A8E6F7;
+	padding-top: 50px;
+	font-family: Jacquard12-Regular;
+}
 
 /* The main home link at the top "Alina Kano" */
 #homeLink {
-	position: fixed;
 	text-decoration: none;
 	text-align: center;
 	padding-left: 45px;
-	font-family: roboto;
+	font-family: courier;
 	letter-spacing: -1px;
 	font-size: 30px;
-	color: #303030;
+	color: #000000;
 }
 #homeLink:visited {
-	color: #303030;
+	color: #000000;
 }
 
 /* The body of the page including the main links on the left and the gallery, etc (everything under the header) */
@@ -71,7 +51,6 @@ header {
 /* The container of your main links menu on the left side */
 #mainLinks {
 	position: fixed;
-	text-decoration: none;
 	padding-left: 50px;
 	top: 123px;
 	width: 130px;
@@ -82,7 +61,7 @@ header {
 #mainLinks a {
 	display: block;
 	line-height: 2;
-	text-align: right;
+	text-decoration: none;
 	color: black;
 	text-transform: uppercase;
 	letter-spacing: 0px;
@@ -90,28 +69,29 @@ header {
 	font-style: bold;
 }
 #mainLinks a:visited {
-	color: 303030;
+	color: black;
 }
 #mainLinks a:hover {
-  color: #757575;
+  color: #f54937;
 }
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: #fff5f5;
+	background-color: #A8E6F7;
 	padding-left: 170px;
 	padding-top: 10px;
 }
+
 
 /* The heading text for each page */
 h1 {
 	padding-top: 10px;
 	padding-left: 40px;
 	padding-bottom: 10px;
-	font-family: roboto;
+	font-family: courier;
 	font-size: 16px;
-}
 
+}
 h2 {
 	font-size: 14px;
 	padding-left: 40px;
@@ -119,6 +99,7 @@ h2 {
 
 /* The container of images of your works */
 #imageGallery {
+
 }
 
 #imageGallery figure {
@@ -130,16 +111,19 @@ h2 {
 	font-size: 12px;
 	font-style: italic;
 	text-align: left;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 	margin: 0px;
 }
 
+
 /* The images of works */
 #imageGallery img {
+	width: 90%;
 	width: 95%;
 	max-width: 600px;
 	height: auto;
 }
+
 
 /* Only applies to the posters page (body has .gallery-page) */
 .gallery-page .gallery {
@@ -167,6 +151,14 @@ h2 {
   .gallery-page .gallery {
     grid-template-columns: 1fr;
   }
+}
+
+/*font -does this work? */
+@font-face {
+  font-family: "jacquard12-regular";
+  src: url(".../fonts/jacquard12-regular.woff") format("woff"),
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Hamburger toggle button (hidden on desktop) */

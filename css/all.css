@@ -23,11 +23,13 @@ body {
   }
 }
 
+
+
 /* All things in the Header container */
 header {
 	background-color: #A8E6F7;
-	padding-top: 50px;
-	font-family: Jacquard12-Regular;
+	padding-top: 40px;
+	font: jacquard12-regular;
 }
 
 /* The main home link at the top "Alina Kano" */
@@ -37,16 +39,20 @@ header {
 	padding-left: 45px;
 	font-family: courier;
 	letter-spacing: -1px;
-	font-size: 30px;
+	font-size: 3em;   /* 1em is 16px */
 	color: #000000;
 }
 #homeLink:visited {
 	color: #000000;
 }
 
+
 /* The body of the page including the main links on the left and the gallery, etc (everything under the header) */
 #pageBody {
+
 }
+
+
 
 /* The container of your main links menu on the left side */
 #mainLinks {
@@ -56,6 +62,7 @@ header {
 	width: 130px;
 	height: 500px;
 }
+
 
 /* The main links for selected work, poster art, band art */
 #mainLinks a {
@@ -72,14 +79,24 @@ header {
 	color: black;
 }
 #mainLinks a:hover {
-  color: #f54937;
+  color: gray;
 }
+
+/* collapsible menu on phone - TESTING */
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
+  }
+  #menu-toggle:checked + .nav-list {
+    display: block;
+  }
+}
+
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
 	background-color: #A8E6F7;
 	padding-left: 170px;
-	padding-top: 10px;
 }
 
 
@@ -87,14 +104,15 @@ header {
 h1 {
 	padding-top: 10px;
 	padding-left: 40px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
 	font-family: courier;
 	font-size: 16px;
 
 }
 h2 {
-	font-size: 14px;
+	font-size: 16px;
 	padding-left: 40px;
+	text-transform: uppercase;
 }
 
 /* The container of images of your works */
@@ -105,6 +123,7 @@ h2 {
 #imageGallery figure {
 	margin-top: 0px;
 	display: block;
+
 }
 
 #imageGallery figure p {
@@ -118,9 +137,7 @@ h2 {
 
 /* The images of works */
 #imageGallery img {
-	width: 90%;
-	width: 95%;
-	max-width: 600px;
+	width: 600px;
 	height: auto;
 }
 
@@ -156,7 +173,7 @@ h2 {
 /*font -does this work? */
 @font-face {
   font-family: "jacquard12-regular";
-  src: url(".../fonts/jacquard12-regular.woff") format("woff"),
+  src: url("fonts/jacquard12-regular.woff") format("woff"),
   font-weight: normal;
   font-style: normal;
 }
@@ -173,3 +190,21 @@ h2 {
   background: none;
   border: none;
 }
+
+/* --- Mobile styles --- */
+@media (max-width: 768px) {
+  #mainLinks {
+    transform: translateX(-100%); /* hide off screen */
+  }
+  #mainLinks.active {
+    transform: translateX(0);     /* slide in */
+  }
+
+  #menuToggle {
+    display: block;  /* show button on small screens */
+  }
+
+  /* Remove extra left padding since no fixed sidebar */
+  #pageBody {
+    padding-left: 0 !important;
+  }

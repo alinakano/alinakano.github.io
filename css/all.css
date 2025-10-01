@@ -1,6 +1,6 @@
 /* Everything */
 * {
-	font-family: courier;
+	font-family: courier new;
 }
 
 /*bg color for website*/
@@ -153,36 +153,3 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
-
-/* Hamburger toggle button (hidden on desktop) */
-/* DOES THIS HELP DISAPPEARING SIDEBAR
-#menuToggle {
-  display: none;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1100;
-  background: none;
-  border: none;
-}
-*/
-
-/* --- Mobile styles --- */
-@media (max-width: 768px) {
-  #mainLinks {
-    transform: translateX(-100%); /* hide off screen */
-  }
-  #mainLinks.active {
-    transform: translateX(0);     /* slide in */
-  }
-
-  #menuToggle {
-    display: block;  /* show button on small screens */
-  }
-
-  /* Remove extra left padding since no fixed sidebar */
-  #pageBody {
-    padding-left: 0 !important;
-  }

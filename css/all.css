@@ -5,7 +5,7 @@
 
 /*bg color for website*/
 html, body {
-  background-color: #A8E6F7;
+  background-color: #fdfcfb;
   margin: 0;
   padding: 0;
 }
@@ -25,9 +25,9 @@ body {
 
 /* All things in the Header container */
 header {
-	background-color: #A8E6F7;
+	background-color: #fdfcfb;
 	padding-top: 50px;
-	font-family: Jacquard12-Regular;
+	font-family: courier;
 }
 
 /* The main home link at the top "Alina Kano" */
@@ -72,13 +72,13 @@ header {
 	color: black;
 }
 #mainLinks a:hover {
-  color: #f54937;
+  color: #b1aec0;
 }
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: #A8E6F7;
-	padding-left: 200px;
+	background-color: #fdfcfb;
+	padding-left: 220px;
 	padding-top: 10px;
 }
 
@@ -129,7 +129,7 @@ h2 {
   grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
   gap: 5px; /* controls the space between columns */
   margin: 0;
-  padding-left: 200px; /* shift whole gallery over for navbar */
+  padding-left: 220px; /* shift whole gallery over for navbar */
 }
 
 .gallery-page .gallery img {
@@ -140,7 +140,7 @@ h2 {
 
 /* If you have a .content-area wrapper on this page */
 .gallery-page .content-area {
-  padding-left: 200px;
+  padding-left: 220px;
 }
 
 

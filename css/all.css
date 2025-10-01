@@ -73,12 +73,12 @@ header {
 	color: black;
 }
 #mainLinks a:hover {
-  color: #b1aec0;
+  color: #494540;
 }
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: #494540;
+	background-color: #fdfcfb;
 	padding-left: 220px;
 	padding-top: 10px;
 }

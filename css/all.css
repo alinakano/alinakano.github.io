@@ -26,7 +26,7 @@ body {
 /* All things in the Header container */
 header {
 	background-color: #fdfcfb;
-	padding-top: 50px;
+	padding-top: 60px;
 	font-family: courier;
 }
 
@@ -34,11 +34,12 @@ header {
 #homeLink {
 	text-decoration: none;
 	text-align: center;
-	padding-left: 45px;
+	padding-left: 55px;
 	font-family: courier;
 	letter-spacing: -1px;
 	font-size: 30px;
 	color: #000000;
+	position: fixed;  /* 👈 only this link stays fixed */
 }
 #homeLink:visited {
 	color: #000000;
@@ -51,8 +52,8 @@ header {
 /* The container of your main links menu on the left side */
 #mainLinks {
 	position: fixed;
-	padding-left: 50px;
-	top: 123px;
+	padding-left: 55px;
+	top: 130px;
 	width: 130px;
 	height: 500px;
 }
@@ -77,7 +78,7 @@ header {
 
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
-	background-color: #fdfcfb;
+	background-color: #494540;
 	padding-left: 220px;
 	padding-top: 10px;
 }

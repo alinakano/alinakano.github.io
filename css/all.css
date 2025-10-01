@@ -78,7 +78,7 @@ header {
 /* The container for all the stuff that isn't the header or links menu */
 .mainContent {
 	background-color: #A8E6F7;
-	padding-left: 170px;
+	padding-left: 180px;
 	padding-top: 10px;
 }
 
@@ -140,7 +140,7 @@ h2 {
 
 /* If you have a .content-area wrapper on this page */
 .gallery-page .content-area {
-  padding-left: 170px;
+  padding-left: 180px;
 }
 
 
@@ -149,14 +149,6 @@ h2 {
   .gallery-page .gallery {
     grid-template-columns: 1fr;
   }
-}
-
-/*font -does this work? */
-@font-face {
-  font-family: "jacquard12-regular";
-  src: url("fonts/jacquard12-regular.woff") format("woff"),
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* Hamburger toggle button (hidden on desktop) */

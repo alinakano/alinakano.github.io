@@ -32,12 +32,13 @@ header {
 
 /* The main home link at the top "Alina Kano" */
 #homeLink {
-	text-decoration: bold;
+	text-decoration: none;
 	text-align: center;
 	padding-left: 55px;
 	font-family: courier new;
 	letter-spacing: -1px;
 	font-size: 30px;
+	font-weight: bold;
 	color: #000000;
 	position: fixed;  /* 👈 only this link stays fixed */
 }

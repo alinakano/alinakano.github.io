@@ -27,15 +27,15 @@ body {
 header {
 	background-color: #fdfcfb;
 	padding-top: 60px;
-	font-family: courier;
+	font-family: courier new;
 }
 
 /* The main home link at the top "Alina Kano" */
 #homeLink {
-	text-decoration: none;
+	text-decoration: bold;
 	text-align: center;
 	padding-left: 55px;
-	font-family: courier;
+	font-family: courier new;
 	letter-spacing: -1px;
 	font-size: 30px;
 	color: #000000;
